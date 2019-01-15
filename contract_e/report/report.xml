@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+			<template id="report_quotation">
+                <t t-call="report.html_container">         
+                    <t t-foreach="docs" t-as="o">
+                        <t>             
+                            <div class="page"> 
+					            <hr />
+								<table class="table borderless">
+								    <tr>
+								        <td><strong>Quotation Number</strong></td>
+								        <td>:</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_number_quotation"/>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td><strong>Penagihan Based On</strong></td>
+								        <td>:</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_usage_order"/>
+								        </td>
+								    </tr>
+								</table>                    
+					            <hr />		            
+					            <table class="table borderless">
+					            	<tr>
+								        <td colspan="2"><strong><i>Client</i></strong></td>
+					            	</tr>
+								    <tr>
+								        <td><strong>NPWP</strong></td>
+								        <td>
+								            <span t-field="o.xquotationtrans_company_npwp"/>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>Company</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_company_contract_id"/>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>Agency Name</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_client_delegation_contract_id"/>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>Product/Brand</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_company_product"/>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>Brand Category</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_company_brand_category"/>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>Campaign Name</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_company_name"/>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>Date</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_date"/>
+								        </td>
+								    </tr>
+								    <tr>
+								        <td>Attention</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_merchdelegation_name"/>
+								        </td>
+								    </tr>								    
+								    <tr>
+								        <td></td>
+								        <td>
+								            <span t-field="o.xquotationtrans_merchdelegation_email"/><span t-field="o.xquotationtrans_merchdelegation_phone"/>
+
+								        </td>
+								    </tr>									    
+								    <tr>
+								        <td>Invoice Address</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_invoices_address"/>
+								        </td>
+								    </tr>
+					            	<tr>
+								        <td colspan="2"><strong><i>Telkomsel</i></strong></td>
+					            	</tr>										    
+								    <tr>
+								        <td>Proposed By (PIC Telkomsel)</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_pic_telkomsel"/>
+								        </td>
+								    </tr>									    
+								    <tr>
+								        <td>Contact Number</td>
+								        <td>
+								            <span t-field="o.xquotationtrans_pic_telkomsel_phone"/>
+								        </td>
+								    </tr>							    							    
+								</table> 
+					            <hr />
+								<table class="table table-condensed" border="1">
+					                <thead>
+					                    <tr>
+					                        <th colspan="3" style="text-align:center;">INVENTORY</th>
+					                        <th style="text-align:center;">REMARKS</th>
+					                        <th colspan="2" style="text-align:center;">PERIOD</th>
+					                        <th style="text-align:center;">TOTAL IMPRESSION</th>
+					                        <th style="text-align:center;">PRICE</th>
+					                        <th style="text-align:center;">TOTAL</th>
+					                    </tr>
+					                </thead>
+					                <tbody class="invoice_tbody">
+					                    <tr t-foreach="o.xquotationtrans_list_rate_card_ids" t-as="l">
+					                        <td class="text-right">
+					                            <span t-field="l.xquotationtrans_main_ratecard_id"/>
+					                        </td>
+					                        <td class="text-right">
+					                            <span t-field="l.xquotationtrans_inventory_ratecard_id"/>
+					                        </td>
+					                        <td class="text-right">
+					                            <span t-field="l.xquotationtrans_detailinventory_ratecard_id"/>
+					                        </td>
+					                        <td class="text-right">
+					                            <span t-field="l.xquotationtrans_detailinventory_remark"/>
+					                        </td>
+					                        <td class="text-right">
+					                            <span t-field="l.xquotationtrans_date_begin"/>
+					                        </td>
+					                        <td class="text-right">
+					                            <span t-field="l.xquotationtrans_end_date"/>
+					                        </td>
+					                        <td class="text-right">
+					                            <span t-field="l.xquotationtrans_qty"/>
+					                        </td>
+					                        <td class="text-right">
+					                            <span t-field="l.xquotationtrans_detailinventory_rate"/>
+					                        </td>
+					                        <td class="text-right">
+					                            <span t-field="l.xquotationtrans_total"/>
+					                        </td>
+					                    </tr>
+					                </tbody>
+					            </table>                            	
+								<div class="row">
+					                <div class="col-xs-4 pull-right">
+										 <table class="table table-condensed">
+								            <tr class="border-black">
+								                <td><strong>Total Gross</strong></td>
+								                <td class="text-right">
+								                    <span t-field="o.xquotationtrans_total_harga"/>
+								                </td>
+								            </tr>
+								            <tr class="border-black">
+							                <td>Discount Sales</td>
+							                <td class="text-right">
+							                     <span t-field="o.xquotationtrans_discount"/>
+							                </td>
+								            </tr>
+								            <tr class="border-black">
+							                <td>Total Discount Sales</td>
+							                <td class="text-right">
+							                    <span t-field="o.xquotationtrans_total_hargax"/>
+							                </td>
+								            </tr>
+								            <tr class="border-black">
+								                <td><strong>Total Bayar(inc. PPN 10%)</strong></td>
+								                <td class="text-right">
+								                    <span t-field="o.xquotationtrans_total_bayar_fix"/>
+								                </td>
+								            </tr>
+								        </table>                    
+					                </div>
+					            </div>			                                
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </template>         	
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data noupdate="1">
+        <record id="reject_quotation_mail_template" model="mail.template">
+            <field name="name">Reject Quotation - Send by Email</field>
+			<field name="email_from">${object.company_id and object.company_id.email or '')|safe}</field>
+            <field name="subject">Reject Quotation</field>
+            <field name="email_to">${object.xquotationtrans_sales_email},${object.xquotationtrans_client_delegation_email}</field>
+            <field name="model_id" ref="contract_e.model_quotation_transaction_telkomsel"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="report_template" ref="reject_quotation_template"/>
+            <field name="report_name">${(object.xquotationtrans_number_quotation or '').replace('/','_')}_${object.state == 'new' and 'new' or ''}</field>
+            <field name="lang">${object.xquotationtrans_client_delegation_email.lang}</field>
+            <field name="body_html"><![CDATA[
+				<div style="font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+				    <p>Hello ${object.xquotationtrans_company_contract_id} and ${object.xquotationtrans_client_delegation_contract_id}</p>
+				    <p>Your quotation request has been rejected. Check file to find out why your request was rejected.</p>
+				    <p>Regards</p>
+				</div>
+            ]]></field>
+        </record>
+    </data>
+</openerp>

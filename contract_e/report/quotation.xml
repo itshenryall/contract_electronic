@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            id="quotation_gm_mail_template"
+            model="quotation.transaction.telkomsel"
+            string="New Quotation"
+            report_type="qweb-pdf"
+            name="contract_e.report_quotation"
+            file="contract_e.report_quotation"
+            attachment_use="True"
+        />
+    </data>
+</odoo>

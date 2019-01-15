@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data noupdate="1">
+        <record id="approve_soa_merchant_mail_template" model="mail.template">
+            <field name="name">Approved Quotation SOA - Send by Email</field>
+            <field name="email_from">${object.company_id and object.company_id.email or '')|safe}</field>
+            <field name="subject">Approved Quotation ${object.xquotationtrans_number_quotation}</field>
+            <field name="email_to">${object.xquotationtrans_client_delegation_email}</field>
+            <field name="model_id" ref="contract_e.model_quotation_transaction_telkomsel"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="report_template" ref="approve_soa_merchant_template"/>
+            <field name="report_name">${(object.xquotationtrans_number_quotation or '').replace('/','_')}_${object.state == 'approved' and 'approved' or ''}</field>
+            <field name="lang">${object.xquotationtrans_client_delegation_email.lang}</field>
+            <field name="body_html"><![CDATA[
+                <div style="font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+                    <p>Hello ${object.xquotationtrans_client_delegation_contract_id}.</p>
+                    <p>Congrats, your ${object.xquotationtrans_client_delegation_contract_id} has been successfully Approved</p>
+                    <p>This is OTP Code ${object.xtransaction_tseldelegation_otp}. Please provide sales, if you agree to an existing contract</p>
+                    <p>Regards ${object.xquotationtrans_tseldelegation_name}</p>
+                </div>
+            ]]></field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            id="new_contract_template"
+            model="transaction.econtract.telkomsel"
+            string="Preview"
+            report_type="qweb-pdf"
+            name="contract_e.report_new_contract"
+            file="contract_e.report_new_contract"
+            attachment_use="True"
+            menu="False"
+        />
+        <report 
+            id="approve_contract_merchant_template"
+            model="transaction.econtract.telkomsel"
+            string="Approved Contract"
+            report_type="qweb-pdf"
+            name="contract_e.report_approved_merch_contract"
+            file="contract_e.report_approved_merch_contract"
+            attachment_use="True"
+            menu="False"
+        /> 
+        <report 
+            id="approve_contract_sales_template"
+            model="transaction.econtract.telkomsel"
+            string="Approved Contract"
+            report_type="qweb-pdf"
+            name="contract_e.report_approved_sales_contract"
+            file="contract_e.report_approved_sales_contract"
+            attachment_use="True"
+            menu="False"
+        />       
+
+        <report 
+            id="reject_contract_template"
+            model="transaction.econtract.telkomsel"
+            string="Reject Contract"
+            report_type="qweb-pdf"
+            name="contract_e.report_reject_contract"
+            file="contract_e.report_reject_contract"
+            attachment_use="True"
+            menu="False"
+        />            
+
+        <report 
+            id="final_contract_template"
+            model="transaction.econtract.telkomsel"
+            string="Preview"
+            report_type="qweb-pdf"
+            name="contract_e.report_final_contract"
+            file="contract_e.report_final_contract"
+            attachment_use="True"
+
+        />       
+    </data>
+</odoo>

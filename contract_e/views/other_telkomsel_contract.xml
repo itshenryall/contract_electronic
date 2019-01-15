@@ -1,0 +1,136 @@
+<odoo>
+	<data>
+        <!-- DATA TELKOMSEL -->
+        <menuitem id="menu_tsel_main" parent="menu_user_root" name="Other Data" sequence="2"/>
+        <!-- Telkomsel Data -->
+        <record id="view_telkomsel_location_account_form" model="ir.ui.view">
+            <field name="name">Alamat Telkomsel form</field>
+            <field name="model">telkomsel.location</field>
+            <field name="arch" type="xml">
+                <form string="Telkomsel">
+                    <sheet>
+                    <group>
+                        <field name="xtseloc_name"/>
+                        <field name="xtseloc_alamat"/>   
+                        <field name="xtseloc_lantai"/>  
+                        <field name="xtseloc_no_telp"/>   
+                        <field name="xtseloc_facsimile"/>   
+                        <field name="xtseloc_attention"/>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_telkomsel_location_tree" model="ir.ui.view">
+            <field name="name">Alamat Telkomsel tree</field>
+            <field name="model">telkomsel.location</field>
+            <field name="field_parent">child_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Telkomsel">
+                    <field name="xtseloc_name"/>
+                    <field name="xtseloc_alamat"/>   
+                    <field name="xtseloc_lantai"/>  
+                    <field name="xtseloc_no_telp"/>   
+                    <field name="xtseloc_facsimile"/>
+                    <field name="xtseloc_attention"/>       
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_telkomsel_location_filter" model="ir.ui.view">
+            <field name="name">Alamat Telkomsel</field>
+            <field name="model">telkomsel.location</field>
+            <field name="arch" type="xml">
+                <search string="Telkomsel">
+                    <field name="xtseloc_name"/>
+                    <field name="xtseloc_alamat"/>   
+                    <field name="xtseloc_lantai"/>  
+                    <field name="xtseloc_no_telp"/>   
+                    <field name="xtseloc_facsimile"/>
+                    <field name="xtseloc_attention"/>        
+                </search>
+             </field>
+        </record>
+
+        <record id="open_module_tree_telkomsel_location" model="ir.actions.act_window">
+            <field name="name">Alamat Telkomsel</field>
+            <field name="res_model">telkomsel.location</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_telkomsel_location_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Alamat Telkomsel.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            action="open_module_tree_telkomsel_location"
+            id="module_open_module_tree_telkomsel_location"
+            parent="menu_tsel_main"
+            sequence="1" groups="contract_e.group_admin"/>          
+        <!-- BANK INFO -->
+        <record id="view_telkomsel_bank_account_form" model="ir.ui.view">
+            <field name="name">Bank Info form</field>
+            <field name="model">telkomsel.bank.account</field>
+            <field name="arch" type="xml">
+                <form string="Bank Info">
+                    <sheet>
+                    <group>
+                        <field name="xbank_tseldelegation_name"/>
+                        <field name="xbank_tseldelegation_bank_name"/>       
+                        <field name="xuser_tseldelegation_alamat_bank"/>      
+                        <field name="xbank_tseldelegation_norek"/>                       
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_telkomsel_bank_account_tree" model="ir.ui.view">
+            <field name="name">Bank Info tree</field>
+            <field name="model">telkomsel.bank.account</field>
+            <field name="field_parent">child_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Bank Info">
+                    <field name="xbank_tseldelegation_name"/>
+                    <field name="xbank_tseldelegation_bank_name"/>      
+                    <field name="xuser_tseldelegation_alamat_bank"/>      
+                    <field name="xbank_tseldelegation_norek"/>        
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_telkomsel_bank_account_filter" model="ir.ui.view">
+            <field name="name">Bank Info</field>
+            <field name="model">telkomsel.bank.account</field>
+            <field name="arch" type="xml">
+                <search string="Bank Info">
+                    <field name="xbank_tseldelegation_name"/>
+                    <field name="xbank_tseldelegation_bank_name"/>    
+                    <field name="xuser_tseldelegation_alamat_bank"/>      
+                    <field name="xbank_tseldelegation_norek"/>           
+                </search>
+             </field>
+        </record>
+
+        <record id="open_module_tree_telkomsel_bank_account" model="ir.actions.act_window">
+            <field name="name">Bank Info</field>
+            <field name="res_model">telkomsel.bank.account</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_telkomsel_bank_account_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Bank Info Telkomsel.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            action="open_module_tree_telkomsel_bank_account"
+            id="module_tree_telkomsel_bank_account"
+            parent="menu_tsel_main"
+            sequence="2" groups="contract_e.group_admin"/>          
+    </data>
+</odoo>

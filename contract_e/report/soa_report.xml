@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            id="soa_gm_template"
+            model="quotation.transaction.telkomsel"
+            string="New SOA GM"
+            report_type="qweb-pdf"
+            name="contract_e.report_new_gm_soa"
+            file="contract_e.report_new_gm_soa"
+            attachment_use="True"
+            menu="False"
+        />
+        <report 
+            id="soa_vp_template"
+            model="quotation.transaction.telkomsel"
+            string="New SOA VP"
+            report_type="qweb-pdf"
+            name="contract_e.report_new_vp_soa"
+            file="contract_e.report_new_vp_soa"
+            attachment_use="True"
+            menu="False"
+        />     
+        <report 
+            id="approve_soa_merchant_template"
+            model="quotation.transaction.telkomsel"
+            string="Approved SOA Merchant"
+            report_type="qweb-pdf"
+            name="contract_e.report_approved_merch_soa"
+            file="contract_e.report_approved_merch_soa"
+            attachment_use="True"
+            menu="False"
+        />  
+        <report 
+            id="approve_soa_sales_template"
+            model="quotation.transaction.telkomsel"
+            string="Approved SOA Sales"
+            report_type="qweb-pdf"
+            name="contract_e.report_approved_sales_soa"
+            file="contract_e.report_approved_sales_soa"
+            attachment_use="True"
+            menu="False"
+        />   
+        <report 
+            id="reject_Soa_template"
+            model="quotation.transaction.telkomsel"
+            string="Reject SOA"
+            report_type="qweb-pdf"
+            name="contract_e.report_reject_Soa"
+            file="contract_e.report_reject_Soa"
+            attachment_use="True"
+            menu="False"
+        />            
+
+        <report 
+            id="final_soa_gm_template"
+            model="quotation.transaction.telkomsel"
+            string="Final SOA GM"
+            report_type="qweb-pdf"
+            name="contract_e.report_final_gm_soa"
+            file="contract_e.report_final_gm_soa"
+            attachment_use="True"
+            menu="False"
+        />          
+
+        <report 
+            id="final_soa_vp_template"
+            model="quotation.transaction.telkomsel"
+            string="Final SOA VP"
+            report_type="qweb-pdf"
+            name="contract_e.report_final_vp_soa"
+            file="contract_e.report_final_vp_soa"
+            attachment_use="True"
+            menu="False"
+        />          
+    </data>
+</odoo>

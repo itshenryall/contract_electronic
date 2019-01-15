@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.module.category" id="module_contract">
+      <field name="name">E-Contract Role</field>
+      <field name="description">User access level for this module</field>
+      <field name="sequence">5</field>
+    </record>
+    <record id="group_admin" model="res.groups">
+      <field name="name">Admin</field>
+      <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+      <field name="category_id" ref="contract_e.module_contract"/>
+    </record>
+
+    <record id="group_sales" model="res.groups">
+      <field name="name">Sales</field>
+      <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+      <field name="category_id" ref="contract_e.module_contract"/>
+    </record>
+
+    <record id="group_gm" model="res.groups">
+      <field name="name">GM</field>
+      <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+      <field name="category_id" ref="contract_e.module_contract"/>
+    </record>
+
+    <record id="group_vp" model="res.groups">
+      <field name="name">VP</field>
+      <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+      <field name="category_id" ref="contract_e.module_contract"/>
+    </record>    
+  </data>
+</odoo>

@@ -1,0 +1,375 @@
+<odoo>
+    <!-- Menu Rate Card -->
+    <menuitem name="Rate Card"
+        id="menu_ratecard_root"
+        sequence="5"/>
+    <menuitem id="menu_ratecard_main" parent="menu_ratecard_root" name="Detail" sequence="2"/>
+
+    <!-- Rate Card -->
+    <record id="view_rate_card_main_form" model="ir.ui.view">
+        <field name="name">Rate Card form</field>
+        <field name="model">rate.card.main</field>
+        <field name="arch" type="xml">
+            <form string="Rate Card">
+                <sheet>
+                    <group>
+                        <field name="xratecard_main_name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_rate_card_main_tree" model="ir.ui.view">
+        <field name="name">Rate Card tree</field>
+            <field name="model">rate.card.main</field>
+        <field name="field_parent">child_ids</field>
+        <field name="arch" type="xml">
+            <tree string="Rate Card">
+                <field name="xratecard_main_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_rate_card_main_filter" model="ir.ui.view">
+        <field name="name">Rate Card</field>
+        <field name="model">rate.card.main</field>
+        <field name="arch" type="xml">
+            <search string="Rate Card">
+                <field name="xratecard_main_name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="open_module_tree_rate_card_main" model="ir.actions.act_window">
+        <field name="name">Rate Card</field>
+        <field name="res_model">rate.card.main</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_rate_card_main_filter"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Click to create a Rate Card.
+            </p>
+        </field>
+    </record>
+
+    <!-- <menuitem
+            action="open_module_tree_rate_card_main"
+            id="menu_tree_open_module_tree_rate_card_main"
+            parent="menu_ratecard_main"
+            sequence="1"/> -->
+
+    <!-- Inventory Rate Card -->
+    <record id="view_inventory_rate_card_form" model="ir.ui.view">
+        <field name="name">Rate Card Inventory form</field>
+        <field name="model">inventory.rate.card</field>
+        <field name="arch" type="xml">
+            <form string="Rate Card Inventory">
+                <sheet>
+                    <group>
+                        <field name="xinventoryrate_name"/>
+                        <field name="xinventoryrate_ratecard_id" on_change="onchange_xinventoryrate_ratecard_id(xinventoryrate_ratecard_id)" options='{"no_create": True, "no_open": True}'/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_inventory_rate_card_tree" model="ir.ui.view">
+        <field name="name">Rate Card Inventory tree</field>
+        <field name="model">inventory.rate.card</field>
+        <field name="arch" type="xml">
+            <tree string="Rate Card Inventory">
+                <field name="xinventoryrate_ratecard_id"/>
+                <field name="xinventoryrate_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_inventory_rate_card_filter" model="ir.ui.view">
+        <field name="name">Rate Card Inventory</field>
+        <field name="model">inventory.rate.card</field>
+        <field name="arch" type="xml">
+            <search string="Rate Card Inventory">
+                <field name="xinventoryrate_ratecard_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="kanban_view_inventory_rate_card">
+        <field name="name">Rate Card Inventory</field>
+        <field name="model">inventory.rate.card</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <kanban class="o_hr_employee_kanban">
+                <templates>
+                    <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click">
+                        <div class="oe_kanban_details">
+                            <ul>
+                                <li t-if="record.xinventoryrate_name.raw_value"><i class="fa fa-user"></i> <field name="xinventoryrate_name"/></li>
+                                <li t-if="record.xinventoryrate_ratecard_id.raw_value"><i class="fa fa-bag"></i> <field name="xinventoryrate_ratecard_id"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="open_view_inventory_rate_card_tree" model="ir.actions.act_window">
+        <field name="name">Rate Card Inventory Structure</field>
+        <field name="res_model">inventory.rate.card</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_inventory_rate_card_tree"/>
+        <field name="domain">[('parent_id','=',False)]</field>
+        <field name="search_view_id" ref="view_inventory_rate_card_filter"/>
+    </record>
+
+    <record id="open_view_inventory_rate_card_list" model="ir.actions.act_window">
+        <field name="name">Rate Card Inventory</field>
+        <field name="res_model">inventory.rate.card</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" eval="False"/>
+        <field name="search_view_id" ref="view_inventory_rate_card_filter"/>
+    </record>
+
+    <record id="open_view_inventory_rate_card_list_my" model="ir.actions.act_window">
+        <field name="name">Rate Card Inventory</field>
+        <field name="res_model">inventory.rate.card</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="view_id" eval="False"/>
+        <field name="search_view_id" ref="view_inventory_rate_card_filter"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Click to add a new Rate Card Inventory.
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_inventory_rate_card">
+        <field name="name">Inventory</field>
+        <field name="res_model">inventory.rate.card</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="search_view_id" ref="view_inventory_rate_card_filter"/>
+        <field name="context">{
+            "search_default_xinventoryrate_ratecard_id": [active_id],
+            "default_xinventoryrate_ratecard_id": active_id}
+        </field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a new Rate Card Inventory.
+            </p>
+        </field>
+    </record>
+
+    <!-- <menuitem action="open_view_inventory_rate_card_list_my" id="menuopen_view_inventory_rate_card_list_my" parent="menu_ratecard_main" sequence="2"/> --> 
+
+    <!-- Kanban Rate Card -->
+    <record model="ir.ui.view" id="hr_rate_card_main_kanban">
+        <field name="name">Rate Card</field>
+        <field name="model">rate.card.main</field>
+        <field name="arch" type="xml">
+            <kanban class="o_hr_employee_kanban">
+                <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">                            
+                            <div
+                                t-attf-class="oe_kanban_color_{{kanban_getcolor(record.color.raw_value)}}
+                                              oe_kanban_global_click_edit oe_semantic_html_override
+                                              oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}">
+                                    <div class="oe_dropdown_kanban">
+                                        <!-- dropdown menu -->
+                                        <div class="oe_dropdown_toggle">
+                                            <i class="fa fa-bars fa-lg"/>
+                                            <ul class="oe_dropdown_menu">
+                                                <li>
+                                                    <a type="delete">Delete</a>
+                                                </li>
+                                                <li>
+                                                    <ul class="oe_kanban_colorpicker"
+                                                        data-field="color"/>
+                                                </li>
+                                            </ul>
+                                    </div>
+                                <div class="oe_clear"></div>
+                            </div>
+                            <div align="center">
+                                <div t-attf-class="oe_kanban_content">
+                                        <!-- title -->
+                                    <strong><field name="xratecard_main_name"/></strong>
+                                    <br/>                     
+                                    <br />
+                                    <br />
+                                    <button class="btn btn-primary btn-xs" name="%(act_inventory_rate_card)d" type="action">List Rate Card Inventory</button>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            </t>
+                    </templates>
+            </kanban>
+        </field>
+    </record>
+
+     <record id="open_module_history_rate_card_main" model="ir.actions.act_window">
+        <field name="name">Rate Card</field>
+        <field name="res_model">rate.card.main</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="search_view_id" ref="view_rate_card_main_filter"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a Rate Card.
+            </p>
+        </field>
+    </record>
+    
+    <menuitem
+            action="open_module_history_rate_card_main"
+            id="menu_open_module_history_rate_card_main"
+            parent="menu_ratecard_root"
+            sequence="1" groups="contract_e.group_admin"/>     
+        <!-- Detail Rate Card -->
+        <record id="view_detail_rate_card_form" model="ir.ui.view">
+            <field name="name">Detail form</field>
+            <field name="model">detail.rate.card</field>
+            <field name="arch" type="xml">
+                <form string="Rate Card Detail">
+                    <sheet>
+                        <group>
+                            <field name="xdetailratecard_ratecard_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="xdetailratecard_inventory_id" domain="[('xinventoryrate_ratecard_id', '=', xdetailratecard_ratecard_id)]" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="xdetailratecard_name"/>
+                            <field name="xdetailratecard_rate"/>
+                            <field name="xdetailratecard_remark"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_detail_rate_card_tree" model="ir.ui.view">
+            <field name="name">Detail tree</field>
+            <field name="model">detail.rate.card</field>
+            <field name="arch" type="xml">
+                <tree string="Rate Card Detail">
+                    <field name="xdetailratecard_ratecard_id"/>
+                    <field name="xdetailratecard_inventory_id"/>
+                    <field name="xdetailratecard_name"/>
+                    <field name="xdetailratecard_rate"/>
+                    <field name="xdetailratecard_remark"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_detail_rate_card_filter" model="ir.ui.view">
+            <field name="name">Detail</field>
+            <field name="model">detail.rate.card</field>
+            <field name="arch" type="xml">
+                <search string="Rate Card Detail">
+                    <field name="xdetailratecard_ratecard_id"/>
+                    <field name="xdetailratecard_inventory_id"/>
+                    <field name="xdetailratecard_name"/>
+                    <field name="xdetailratecard_rate"/>
+                    <field name="xdetailratecard_remark"/>
+                </search>
+             </field>
+        </record>
+
+
+        <record id="open_module_tree_detail_rate_card" model="ir.actions.act_window">
+            <field name="name">Detail</field>
+            <field name="res_model">detail.rate.card</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_detail_rate_card_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Rate Card Detail.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            action="open_module_tree_detail_rate_card"
+            id="module_open_module_tree_detail_rate_card"
+            parent="menu_ratecard_main"
+            sequence="1" groups="contract_e.group_admin"/>     
+
+        <!-- RATE CARD SALES -->
+        <record id="view_detail_rate_card_sales_form" model="ir.ui.view">
+            <field name="name">Rate Card form</field>
+            <field name="model">detail.rate.card</field>
+            <field name="arch" type="xml">
+                <form string="Rate Card Detail" create="false" edit="false">
+                    <sheet>
+                        <group>
+                            <field name="xdetailratecard_ratecard_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="xdetailratecard_inventory_id" domain="[('xinventoryrate_ratecard_id', '=', xdetailratecard_ratecard_id)]" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="xdetailratecard_name"/>
+                            <field name="xdetailratecard_rate"/>
+                            <field name="xdetailratecard_remark"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_detail_rate_card_sales_tree" model="ir.ui.view">
+            <field name="name">Rate Card tree</field>
+            <field name="model">detail.rate.card</field>
+            <field name="arch" type="xml">
+                <tree string="Rate Card Detail" create="false" edit="false">
+                    <field name="xdetailratecard_ratecard_id"/>
+                    <field name="xdetailratecard_inventory_id"/>
+                    <field name="xdetailratecard_name"/>
+                    <field name="xdetailratecard_rate"/>
+                    <field name="xdetailratecard_remark"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_detail_rate_card_sales_filter" model="ir.ui.view">
+            <field name="name">Rate Card </field>
+            <field name="model">detail.rate.card</field>
+            <field name="arch" type="xml">
+                <search string="Rate Card Detail">
+                    <field name="xdetailratecard_ratecard_id"/>
+                    <field name="xdetailratecard_inventory_id"/>
+                    <field name="xdetailratecard_name"/>
+                    <field name="xdetailratecard_rate"/>
+                    <field name="xdetailratecard_remark"/>
+                </search>
+             </field>
+        </record>
+
+
+        <record id="open_module_tree_detail_rate_card_sales" model="ir.actions.act_window">
+            <field name="name">Rate Card </field>
+            <field name="res_model">detail.rate.card</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_detail_rate_card_sales_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Rate Card Detail.
+              </p>
+            </field>
+        </record>
+        
+        <menuitem
+            action="open_module_tree_detail_rate_card_sales"
+            id="module_open_module_tree_detail_rate_card_sales"
+            parent="menu_ratecard_root"
+            sequence="5" groups="contract_e.group_sales"/> 
+</odoo>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            id="quotation_gm_template"
+            model="quotation.transaction.telkomsel"
+            string="Preview"
+            report_type="qweb-pdf"
+            name="contract_e.report_new_gm_quotation"
+            file="contract_e.report_new_gm_quotation"
+            attachment_use="True"
+            menu="False"
+        />
+        <report 
+            id="quotation_vp_template"
+            model="quotation.transaction.telkomsel"
+            string="Preview"
+            report_type="qweb-pdf"
+            name="contract_e.report_new_vp_quotation"
+            file="contract_e.report_new_vp_quotation"
+            attachment_use="True"
+            menu="False"
+        />     
+        <report 
+            id="approve_quotation_merchant_template"
+            model="quotation.transaction.telkomsel"
+            string="Approved Quotation"
+            report_type="qweb-pdf"
+            name="contract_e.report_approved_merch_quotation"
+            file="contract_e.report_approved_merch_quotation"
+            attachment_use="True"
+            menu="False"
+        />  
+        <report 
+            id="approve_quotation_sales_template"
+            model="quotation.transaction.telkomsel"
+            string="Approved Quotation"
+            report_type="qweb-pdf"
+            name="contract_e.report_approved_sales_quotation"
+            file="contract_e.report_approved_sales_quotation"
+            attachment_use="True"
+            menu="False"
+        />   
+
+        <report 
+            id="reject_quotation_template"
+            model="quotation.transaction.telkomsel"
+            string="Reject Quotation"
+            report_type="qweb-pdf"
+            name="contract_e.report_reject_quotation"
+            file="contract_e.report_reject_quotation"
+            attachment_use="True"
+            menu="False"
+        />            
+
+        <report 
+            id="final_quotation_gm_template"
+            model="quotation.transaction.telkomsel"
+            string="Preview"
+            report_type="qweb-pdf"
+            name="contract_e.report_final_gm_quotation"
+            file="contract_e.report_final_gm_quotation"
+            attachment_use="True"
+        />          
+
+        <report 
+            id="final_quotation_vp_template"
+            model="quotation.transaction.telkomsel"
+            string="Preview"
+            report_type="qweb-pdf"
+            name="contract_e.report_final_vp_quotation"
+            file="contract_e.report_final_vp_quotation"
+            attachment_use="True"
+        />          
+    </data>
+</odoo>

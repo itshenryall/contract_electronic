@@ -1,0 +1,107 @@
+<odoo>
+<data>
+	<record id="view_telkomsel_delegation_user_form" model="ir.ui.view">
+        <field name="name">Telkomsel Delegation form</field>
+        <field name="model">telkomsel.delegation.user</field>
+        <field name="arch" type="xml">
+        	<form string="Telkomsel Delegation">
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar" options='{"preview_image":"image_medium"}'/>                 
+                        <div class="oe_title">
+                            <label for="User Name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="xuser_tseldelegation_name"/>
+                            </h1>
+                        </div>                      
+                    <group>
+                        <group string="Contact">
+                            <field name="xuser_tseldelegation_email"/>
+                            <field name="xuser_tseldelegation_phone"/>
+                            <field name="xuser_tseldelegation_phonee"/>
+                        </group>
+                        <group string="Position">
+                            <field name="xuser_tseldelegation_position"/>
+                            <field name="xuser_tseldelegation_department_id"/>
+                        </group>                            
+                    </group>
+                </sheet>
+        	</form>
+        </field>
+    </record>
+
+    <record id="view_telkomsel_delegation_user_tree" model="ir.ui.view">
+        <field name="name">Telkomsel Delegation tree</field>
+        <field name="model">telkomsel.delegation.user</field>
+        <field name="arch" type="xml">
+            <tree string="Telkomsel Delegation">
+                <field name="xuser_tseldelegation_name"/>
+                <field name="xuser_tseldelegation_email" widget="email"/>
+                <field name="xuser_tseldelegation_phone"/>
+                <field name="xuser_tseldelegation_department_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_telkomsel_delegation_user_filter" model="ir.ui.view">
+        <field name="name">Telkomsel Delegation</field>
+        <field name="model">telkomsel.delegation.user</field>
+        <field name="arch" type="xml">
+            <search string="Telkomsel Delegation ">
+                <field name="xuser_tseldelegation_name"/>
+                <field name="xuser_tseldelegation_email"/>
+                <field name="xuser_tseldelegation_phone"/>
+                <field name="xuser_tseldelegation_department_id"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="telkomsel_delegation_user_kanban_view">
+        <field name="name">Telkomsel Delegation</field>
+        <field name="model">telkomsel.delegation.user</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <kanban class="o_hr_employee_kanban">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('telkomsel.delegation.user', 'image_medium', record.id.value)"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong>
+                                    <field name="xuser_tseldelegation_name"/>
+                                </strong>
+                                <ul>
+                                    <li t-if="record.xuser_tseldelegation_phone.raw_value">Phone Number :<field name="xuser_tseldelegation_phone"/></li>
+                                    <li t-if="record.xuser_tseldelegation_email.raw_value">Email :<field name="xuser_tseldelegation_email"/></li>
+                                    <li t-if="record.xuser_tseldelegation_department_id.raw_value">Department :<field name="xuser_tseldelegation_department_id"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="open_module_tree_telkomsel_delegation_user" model="ir.actions.act_window">
+        <field name="name">Telkomsel Delegation</field>
+        <field name="res_model">telkomsel.delegation.user</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="view_telkomsel_delegation_user_filter"/>
+        <field name="help" type="html">
+    	    <p class="oe_view_nocontent_create">
+        		Click to create a new telkomsel delegation.
+        	</p>
+        </field>
+    </record>
+
+    <menuitem
+        action="open_module_tree_telkomsel_delegation_user"
+        id="module_tree_telkomsel_delegation_user"
+        parent="menu_user_main"
+        sequence="3" groups="contract_e.group_admin"/>       
+</data>
+</odoo>

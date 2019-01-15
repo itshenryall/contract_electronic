@@ -1,0 +1,161 @@
+<odoo>
+<data noupdate="1">    
+    <menuitem name="Veirification Data"
+            id="menu_verif_root"
+            sequence="8"/>
+    <menuitem id="menu_verif_otp" parent="menu_verif_root" name="Veirification" sequence="1"/>
+    <!-- OTP -->
+    <record id="view_contract_otp_form" model="ir.ui.view">
+        <field name="name">Contract</field>
+        <field name="model">transaction.econtract.telkomsel</field>
+        <field name="arch" type="xml">
+            <form string="Contract" create="false" edit="true" delete="false">
+                <sheet>
+                    <!-- <header>
+                        <field name="state" widget="statusbar"/>
+                    </header> -->
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="xtelkomsel_transaction_number" readonly="1"/>
+                            </h1>
+                        </div>  
+                        <field name="xtransaction_date"/>
+                        <group>
+                            <button string="Generate OTP" type="object" name="generate_record_name" class="oe_highlight" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="xtransaction_tseldelegation_otp" password="" invisible="1"/>  
+                            <field name="xtransaction_tseldelegation_otp_confirmation"/>
+                            <field name="xtransaction_status_contract" invisible="1"/>  
+                        </group>
+                    <group string="Agreement duration">
+                        <field name="xtransaction_sales_id" options='{"no_create": True, "no_open": True}'/>
+                        <field name="xtransaction_sales_name" invisible="1"/>
+                        <field name="xtransaction_sales_phone" invisible="1"/>
+                        <field name="xtransaction_sales_email" invisible="1"/>
+                        <field name="xtransaction_vp_name" invisible="1"/>
+                        <field name="xtransaction_gm_name" invisible="1"/>
+                        <field name="xtransaction_vp_email" invisible="1"/>
+                        <field name="xtransaction_gm_email" invisible="1"/>
+                        <field name="xtransaction_date_begin"/>
+                        <field name="xtransaction_end_date"/>
+                    </group>
+                    <group>
+                        <group string="Telkomsel Delegation">
+                            <field name="xtransaction_tseldelegation_id" on_change="onchange_xtransaction_tseldelegation_id(xtransaction_tseldelegation_id)" 
+                                                context="{'show_service': 1}"
+                                                options='{"always_reload": True, "highlight_first_line": True, "no_create": True, "no_open": True}'/>
+                            <field name="xtransaction_tseldelegation_name" invisible="1"/>
+                            <field name="xtransaction_tseldelegation_position"/>
+                            <field name="xtransaction_tseldelegation_phone"/>
+                            <field name="xtransaction_tseldelegation_email"/>
+                        </group>
+                        <group string="Client and Delegation">
+                            <field name="xtransaction_merchdelegation_id" on_change="onchange_xtransaction_merchdelegation_id(xtransaction_merchdelegation_id)" 
+                                                context="{'show_service': 1}"
+                                                options='{"always_reload": True, "highlight_first_line": True}'/>
+                            <field name="xtransaction_merchdelegation_name" invisible="1"/>
+                            <field name="xtransaction_merchdelegation_npwp" invisible="1"/>
+                            <field name="xtransaction_merchdelegation_alamat"/>
+                            <field name="xtransaction_merchdelegation_user_id" on_change="onchange_xtransaction_merchdelegation_user_id(xtransaction_merchdelegation_user_id)" 
+                                                context="{'show_service': 1}"
+                                                options='{"always_reload": True, "highlight_first_line": True}'/>
+                            <field name="xtransaction_merchdelegation_name_user" invisible="1"/>
+                            <field name="xtransaction_merchdelegation_jabatan"/>
+                            <field name="xtransaction_merchdelegation_email"/>
+                            <field name="xtransaction_merchdelegation_phone"/>                          
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="alamatelkomsel" string="Info Telkomsel">
+                            <group>
+                                <field name="xtransaction_tseldelegation_alamat_telkomsel_id" on_change="onchange_xtransaction_tseldelegation_alamat_telkomsel_id(xtransaction_tseldelegation_alamat_telkomsel_id)" 
+                                            context="{'show_service': 1}"
+                                            options='{"always_reload": True, "highlight_first_line": True}'/>
+                                <field name="xtransaction_tseldelegation_alamat_name" invisible="1"/>
+                                <field name="xtransaction_tseldelegation_alamat"/>
+                                <field name="xtransaction_tseldelegation_lantai"/>
+                                <field name="xtransaction_tseldelegation_no_telp"/>
+                                <field name="xtransaction_tseldelegation_facsimile"/>
+                                <field name="xtransaction_tseldelegation_attention"/>
+                            </group>
+                        </page>   
+                        <page name="banktsel" string="Bank Info">
+                            <group>
+                                <field name="xtransaction_tseldelegation_bank_id" on_change="onchange_xtransaction_tseldelegation_bank_id(xtransaction_tseldelegation_bank_id)" 
+                                            context="{'show_service': 1}"
+                                            options='{"always_reload": True, "highlight_first_line": True}'/>
+                                <field name="xtransaction_tseldelegation_account_bank_name" invisible="1"/> 
+                                <field name="xtransaction_tseldelegation_bank_name"/>
+                                <field name="xtransaction_tseldelegation_alamat_bank"/>
+                                <field name="xtransaction_tseldelegation_norek"/>
+                                <field name="xtransaction_delegationtsel_id"/>
+                                <field name="xtransaction_delegationmerch_id"/>
+                            </group>
+                        </page>                              
+                    </notebook>
+                    </sheet>
+                </sheet>    
+            </form>
+        </field>
+    </record>
+
+    <record id="view_contract_otp_tree" model="ir.ui.view">
+        <field name="name">Contract</field>
+        <field name="model">transaction.econtract.telkomsel</field>
+        <field name="arch" type="xml">
+            <tree string="Contract" create="false" edit="false" delete="false">
+                <field name="xtransaction_tseldelegation_otp_confirmation"/>
+                <field name="xtransaction_date"/>
+                <field name="xtransaction_merchdelegation_id"/>
+                <field name="xtransaction_merchdelegation_user_id"/>
+                <field name="xtransaction_merchdelegation_email"/>
+                <field name="xtransaction_merchdelegation_phone"/>
+                <field name="xtransaction_sales_name"/>
+                <field name="xtransaction_date_begin"/>
+                <field name="xtransaction_end_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_contract_otp_filter" model="ir.ui.view">
+        <field name="name">Contract</field>
+        <field name="model">transaction.econtract.telkomsel</field>
+        <field name="arch" type="xml">
+            <search string="Contract">
+                 <filter string="Final" name="final_contract_merchant" domain="[('state','=','final')]"/>
+                 <field name="xtransaction_tseldelegation_otp_confirmation"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="open_module_tree_contract_otp" model="ir.actions.act_window">
+        <field name="name">Contract</field>
+        <field name="res_model">transaction.econtract.telkomsel</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+            <field name="context">{
+                "search_default_final_contract_merchant": 4,
+                "default_final_contract_merchant": 4}
+            </field>
+            <!-- <field name="domain">[('create_uid','=',uid)]</field> -->
+<!--             <field name="domain">[]</field> -->
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_contract_otp_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_contract_otp_form')})]"/>
+            <field name="search_view_id" ref="view_contract_otp_filter"/>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create Contract.
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="open_module_tree_contract_otp"
+            id="menu_open_module_tree_contract_otp"
+            parent="menu_verif_otp"
+            sequence="1" groups="contract_e.group_admin,contract_e.group_sales,contract_e.group_vp"/>
+</data>
+</odoo>

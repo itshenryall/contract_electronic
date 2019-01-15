@@ -1,0 +1,72 @@
+<odoo>
+  <data>
+    <record id="view_res_users_inherited" model="ir.ui.view">
+        <field name="name">view.res.users.inherited</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//form/sheet/notebook/page[1]" position="after">
+        <page name="additional_info" string="Additional Information">
+            <group >
+                <!-- <field name="xcontract_sales_gm_id" options='{"no_create": True, "no_open": True}' attrs="{'invisible': [('xcontract_posisiton', '!=', 'sales')]}"/>  -->             
+                <field name="xcontract_department"/>         
+                <field name="xcontract_posisiton"/>
+                <!-- GM -->
+                <field name="xcontract_vp_id" 
+                      on_change="onchange_xcontract_vp_id(xcontract_vp_id)" 
+                      domain="[('xcontract_posisiton','=','vp')]"
+                      options='{"no_create": True, "no_open": True}' 
+                      attrs="{'invisible': [('xcontract_posisiton', '!=', 'gm')]}"/> 
+                <!-- SALES -->
+                <field name="xcontract_vp_sales_id"
+                      on_change="onchange_xcontract_vp_sales_id(xcontract_vp_sales_id)" 
+                      domain="[('xcontract_posisiton','=','vp')]"
+                      context="{'show_service': 1}"
+                      options='{"always_reload": True, "highlight_first_line": True, "no_create": True, "no_open": True}'
+                      attrs="{'invisible': [('xcontract_posisiton', '!=', 'sales')]}"/> 
+                <field name="xcontract_vp_sales_name" invisible="1"/>  
+                <field name="xcontract_vp_sales_email" invisible="1"/>  
+                <field name="xcontract_vp_sales_department" invisible="1"/>   
+                <field name="xcontract_vp_sales_position" invisible="1"/>  
+                <field name="xcontract_vp_sales_signature" widget="image" class="oe_avatar" options='{"preview_image": "image_medium"}' invisible="1"/>                  
+                <field name="xcontract_gm_sales_id" 
+                      domain="[('xcontract_vp_id', '=', xcontract_vp_sales_id)]" 
+                      context="{'show_service': 1}"
+                      options='{"always_reload": True, "highlight_first_line": True, "no_create": True, "no_open": True}'
+                      attrs="{'invisible': [('xcontract_posisiton', '!=', 'sales')]}"/>
+                <field name="xcontract_gm_sales_name" invisible="1"/>  
+                <field name="xcontract_gm_sales_email" invisible="1"/>  
+                <field name="xcontract_gm_sales_department" invisible="1"/>   
+                <field name="xcontract_gm_sales_position" invisible="1"/>  
+                <field name="xcontract_gm_sales_signature" widget="image" class="oe_avatar" options='{"preview_image": "image_medium"}' invisible="1"/>   
+                <field name="xcontract_address"/> 
+            </group>
+            <group>
+                <group>
+                <field name="xcontract_phone_number_one"/>
+                </group>
+                <group>
+                <field name="xcontract_phone_number_two"/>
+                </group>
+            </group>
+            <group>
+                <field name="xcontract_signature" widget="signature"/>
+            </group>
+        </page>
+        </xpath>
+        </field>
+    </record> 
+
+    <record model="ir.ui.view" id="view_res_users_tree_inherit">
+        <field name="name">view.res.users.tree.inherit</field>
+        <field name="model">res.users</field>
+        <field name="type">tree</field>
+      <field name="inherit_id" ref="base.view_users_tree"/>
+        <field name="arch" type="xml">
+          <xpath expr="/tree/field[@name='lang']" position="replace">
+            <field name="xcontract_posisiton"/>
+        </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

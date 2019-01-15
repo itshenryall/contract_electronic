@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+                  <template id="report_new_vp_soa">
+                <t t-call="report.html_container">         
+                    <t t-foreach="docs" t-as="o">
+                        <t>             
+                            <div class="page"> 
+<htmlData><![CDATA[<html>
+<table width="100%">
+<tbody>
+<tr>
+<td style="width: 120.25pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="160">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">Quotation number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></strong></p>
+</td>
+<td style="width: 21.25pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">:</span></strong></p>
+</td>
+<td style="width: 309.3pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="412">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_number_quotation"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 120.25pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="160">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">Penagihan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></strong></p>
+</td>
+<td style="width: 21.25pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">:</span></strong></p>
+</td>
+<td style="width: 309.3pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="412">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_usage_quotation"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="font-size: 10.0pt; line-height: 107%;">&nbsp;</span></strong></p>
+<table width="100%">
+<tbody>
+<tr>
+<td style="width: 225.4pt; border: none; border-bottom: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">CLIENT</span></strong></p>
+</td>
+<td style="width: 225.4pt; border: none; border-bottom: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">&nbsp;</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; border: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">NPWP</span></strong></p>
+</td>
+<td style="width: 225.4pt; border: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_company_npwp"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">Company</span></p>
+</td>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_company_contract_id"/>
+
+      <htmlData><![CDATA[<html>
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">Agency Name</span></p>
+</td>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_client_delegation_contract_id"/>
+
+      <htmlData><![CDATA[<html>
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt; color: black;">Product/Brand</span></p>
+</td>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_company_product"/>
+
+      <htmlData><![CDATA[<html>
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">Brand Category</span></p>
+</td>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_company_brand_category"/>
+
+      <htmlData><![CDATA[<html>
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt; color: black;">Campaign Name</span></p>
+</td>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_company_name"/>
+
+      <htmlData><![CDATA[<html>
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt; color: black;">Date</span></p>
+</td>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_date"/>
+
+      <htmlData><![CDATA[<html>
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt; color: black;">Attention</span></strong></p>
+</td>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_merchdelegation_name"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt; color: black;">&nbsp;</span></strong></p>
+</td>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_merchdelegation_email"/>
+
+      <htmlData><![CDATA[<html> & </html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_merchdelegation_phone"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt; color: black;">Invoice Address</span></strong></p>
+</td>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_invoices_address"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="font-size: 10.0pt; line-height: 107%;">&nbsp;</span></strong></p>
+<table width="100%">
+<tbody>
+<tr>
+<td style="width: 225.4pt; border: none; border-bottom: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt; color: black;">TELKOMSEL</span></strong></p>
+</td>
+<td style="width: 225.4pt; border: none; border-bottom: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">&nbsp;</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; border: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt; color: black;">Proposed By (PIC Tsel</span></p>
+</td>
+<td style="width: 225.4pt; border: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_pic_telkomsel"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">Contact Number</span></p>
+</td>
+<td style="width: 225.4pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="301">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_pic_telkomsel_phone"/>
+
+      <htmlData><![CDATA[<html>
+</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="font-size: 10.0pt; line-height: 107%;">&nbsp;</span></strong></p>
+</html>]]>
+</htmlData> 
+<table class="table table-bordered" width="100%">
+      <tbody>
+            <tr>
+                  <td style="width: 450.8pt; border: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" colspan="6" width="601">
+                  <p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 10.0pt;">QUOTATION</span></strong></p>
+                  </td>
+            </tr>
+            <tr class="table-dark text-dark">
+                  <td style="width: 107.65pt; border: solid windowtext 1.0pt; border-top: none; background: white; padding: 0cm 5.4pt 0cm 5.4pt;" width="144">
+                  <p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 10.0pt;">INVENTORY</span></strong></p>
+                  </td>
+                  <td style="width: 62.2pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: white; padding: 0cm 5.4pt 0cm 5.4pt;" width="83">
+                  <p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt;">REMARKS</span></strong></p>
+                  </td>
+                  <td style="width: 74.1pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: white; padding: 0cm 5.4pt 0cm 5.4pt;" width="99">
+                  <p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 10.0pt;">PERIOD</span></strong></p>
+                  </td>
+                  <td style="width: 63.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: white; padding: 0cm 5.4pt 0cm 5.4pt;" width="85">
+                  <p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 10.0pt;">TOTAL</span></strong></p>
+                  <p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 10.0pt;">IMPRESSION</span></strong></p>
+                  </td>
+                  <td style="width: 61.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: white; padding: 0cm 5.4pt 0cm 5.4pt;" width="82">
+                  <p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 10.0pt;">PRICE</span></strong></p>
+                  </td>
+            </tr>            
+            <tr t-foreach="o.xquotationtrans_list_rate_card_ids_usage" t-as="l">
+                  <td style="width: 107.65pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="144">
+                  <p style="margin-bottom: .0001pt; line-height: normal;">
+                        <span style="font-size: 10.0pt;" t-field="l.xquotationtrans_main_ratecard_id"/><br />
+                        <span style="font-size: 10.0pt;" t-field="l.xquotationtrans_inventory_ratecard_id"/><br />
+                        <span style="font-size: 10.0pt;" t-field="l.xquotationtrans_detailinventory_ratecard_id"/>
+                  </p>
+                  </td>
+                  <td style="width: 62.2pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="83">
+                  <p style="margin-bottom: .0001pt; line-height: normal;">
+                        <span style="font-size: 10.0pt;" t-field="l.xquotationtrans_detailinventory_remark"/>
+                  </p>
+                  </td>
+                  <td style="width: 74.1pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="99">
+                  <p style="margin-bottom: .0001pt; line-height: normal;">
+                        <span style="font-size: 10.0pt;" t-field="l.xquotationtrans_date_begin"/> -<br /> 
+                        <span style="font-size: 10.0pt;" t-field="l.xquotationtrans_end_date"/>
+                  </p>
+                  </td>
+                  <td style="width: 63.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="85">
+                  <p style="margin-bottom: .0001pt; line-height: normal;">
+                        <span style="font-size: 10.0pt;" t-field="l.xquotationtrans_qty"/>
+                  </p>
+                  </td>
+                  <td style="width: 61.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="82">
+                  <p style="margin-bottom: .0001pt; line-height: normal;">
+                        <span style="font-size: 10.0pt;" t-field="l.xquotationtrans_detailinventory_rate"/>
+                  </p>
+                  </td>                            
+            </tr>
+      </tbody>
+</table>              
+<div class="row">
+    <div class="col-xs-4 pull-right">
+            <table class="table table-condensed">
+                  <tr class="border-black">
+                      <td>Discount Sales</td>
+                          <td class="text-right">
+                              <span t-field="o.xquotationtrans_discount_usage"/>
+                          </td>
+                  </tr>
+            </table>                    
+    </div>
+</div>                    
+<htmlData><![CDATA[<html>
+<p style="page-break-after:always;"><strong><span style="font-size: 10.0pt; line-height: 107%;">&nbsp;</span></strong></p>
+<table width="100%">
+<tbody>
+<tr>
+<td style="width: 450.8pt; border: none; border-bottom: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" colspan="2" width="601">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt; color: black;">REMARKS</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; border: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt; color: black;">1</span></p>
+</td>
+<td style="width: 429.75pt; border: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Sudah termasuk PPN 10% dan agency discount</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">2</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Apabila ada beberapa kegagalan pengiriman SMS maka akan dikirimkan dalam campaign berikutnya dengan periode maksimal 3 bulan setelah campaign berakhir</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" rowspan="3" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">3</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Materi SMS diterima dalam "bentuk jadi" dari klien dan dituangkan dalam campaign order dengan ketentuan:</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Masking : maks. 11 karakter</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Body : maks. 160 karakter</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">4</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Pendaftaran Masking (sender ID) dilakukan H-3 sebelum campaign</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">5</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Report campaign akan diberikan maksimal 3 hari kerja setelah seluruh campaign berakhir</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" rowspan="4" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">6</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Pembayaran dilakukan 1 hari kerja sebelum campaign dimulai, ke rekening (IDR) sebagai berikut :</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_account_bank_name"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_bank_name"/>
+
+      <htmlData><![CDATA[<html></html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_alamat_bank"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><strong><span style="font-size: 10.0pt;">No. 
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_norek"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" rowspan="5" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">7</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Quotation asli dan bermaterai dikirimkan ke :</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_alamat_name"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_lantai"/>
+
+      <htmlData><![CDATA[<html>
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_alamat"/>
+
+      <htmlData><![CDATA[<html>
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_attention"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">8</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Khusus klien Content Provider maka setiap pembelian inventory hanya boleh digunakan untuk layanan Content Provider yang bersangkutan</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">9</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Brand Category diisi sesuai dengan daftar yang terdapat di salesforce</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="font-size: 10.0pt; line-height: 107%;">&nbsp;</span></strong></p>
+<table width="100%">
+<tbody>
+<tr>
+<td style="width: 450.8pt; border: none; border-bottom: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" colspan="2" width="601">
+<p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-size: 10.0pt; color: black;">Advertising Term and Condition:</span></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; border: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt; color: black;">1</span></p>
+</td>
+<td style="width: 429.75pt; border: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Materi informasi / promosi tidak mengandung unsur minuman keras, maupun senjata api maupun yang mengandung unsur perjudian, pornografi, pelecehan, atau penghinaan&nbsp; atas norma / unsur SARA (Suku, Agama, Ras dan Antar Golongan) penipuan maupun penyesatan</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">2</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Pelanggan yang menerima materi informasi / promosi adalah mereka yang tidak berkeberatan untuk menerima materi informasi / promosi tersebut , dengan mekanisme pelanggan yang berkeberatan akan mendaftarkan nomornya kepada Telkomsel untuk tidak diblast pada kesempatan berikutnya</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">3</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Materi informasi / promosi merupakan tanggung jawab klien, bukan tanggung jawab Telkomsel</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">4</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Jika terjadi gagal broadcast maka akan dilakukan broadcast ulang pada waktu yang ditentukan oleh brand dan disepakati Telkomsel</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">5</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Telkomsel sewaktu-waktu dapat menghentikan pengiriman SMS apabila terdapat unsur-unsur yang memenuhi perkara sebagaimana diatur dalam butir 1., dengan terlebih dahulu memberitahukan kepada klien; atas pemberitahuan dimaksud, klien wajib menyampaikan tanggapannya kepada Telkomsel selambat - lambatnya dalam waktu 1x24 jam terhitung sejak pemberitahuan dimaksud diterima klien; apabila setelah 1x24 jam klien tidak menyampaikan tanggapan, maka Telkomsel dapat menghentikan&nbsp; pengiriman SMS dan klien dianggap telah menyetujui. Penghentian pengiriman SMS dilakukan setelah disepakati oleh kedua belah pihak</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" rowspan="2" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">6</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">FCO (Form Campaign Order) diterima oleh Telkomsel selambat-lambatnya 3 hari kerja sebelum jadwal campaign berjalan</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">Jika FCO (Form Campaign Order) diterima oleh Telkomsel melebihi batas waktu yang ditentukan, maka klien akan dikenakan Special Short Service</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" rowspan="4" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">7</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">Special Short Service :</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">a. 100% dari publish rate jika FCO (Form Campaign Order) diterima pada hari yang sama dengan jadwal campaign berjalan</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt;">b. 75% dari publish rate jika FCO (Form Campaign Order) diterima 1 hari sebelum jadwal campaign berjalan</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt; color: black;">c. Nilai Diskon&nbsp;&nbsp; tidak berlaku untuk <em>special short service</em></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">8</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt; color: black;">Untuk klien Prepaid, Special Short Service akan diberlakukan dengan memotong kuota bucket</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 21.05pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="28">
+<p style="margin-bottom: .0001pt; line-height: normal;"><span style="font-size: 10.0pt;">9</span></p>
+</td>
+<td style="width: 429.75pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="573">
+<p style="text-align: justify;"><span style="font-size: 10.0pt; color: black;">Telkomsel sewaktu-waktu dapat menolak untuk menjalankan campaign jika campaign dianggap akan menimbulkan kontroversi di masyarakat</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="font-size: 10.0pt; line-height: 107%;">&nbsp;</span></strong></p>
+<br />
+<table width="100%">
+<tbody>
+<tr>
+<td style="width: 150.25pt; border: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="200">
+<p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 12.0pt;">Known by,</span></strong></p>
+</td>
+<td style="width: 150.25pt; border: solid windowtext 1.0pt; border-left: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="200">
+<p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 12.0pt;">Arranged by,</span></strong></p>
+</td>
+<td style="width: 150.3pt; border: solid windowtext 1.0pt; border-left: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="200">
+<p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 12.0pt;">Approved by,</span></strong></p>
+</td>
+</tr>
+<tr style="height: 77.2pt;">
+<td style="width: 150.25pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt; height: 77.2pt;" width="200">
+<p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 10.0pt;">&nbsp;</span></strong></p>
+</td>
+<td style="width: 150.25pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt; height: 77.2pt;" width="200">
+<p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 10.0pt;">&nbsp;</span></strong></p>
+</td>
+<td style="width: 150.3pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt; height: 77.2pt;" width="200">
+<p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 10.0pt;">&nbsp;</span></strong></p>
+</td>
+</tr>
+<tr style="height: 15.75pt;">
+<td style="width: 150.25pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt; height: 15.75pt;" width="200">
+<p style="margin-bottom: .0001pt; text-align: center; line-height: normal;">Manager Dig. Advertising Sales Dept.</p>
+</td>
+<td style="width: 150.25pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt; height: 15.75pt;" width="200">
+<p style="margin-bottom: .0001pt; text-align: center; line-height: normal;">Sales Department</p>
+</td>
+<td style="width: 150.3pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt; height: 15.75pt;" width="200">
+<p style="margin-bottom: .0001pt; text-align: center; line-height: normal;">MITRA</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="font-size: 10.0pt; line-height: 107%;">&nbsp;</span></strong></p>
+<p><strong><span style="font-size: 10.0pt; line-height: 107%;">&nbsp;</span></strong></p>
+<p><strong><span style="font-size: 10.0pt; line-height: 107%;">&nbsp;</span></strong></p>
+<table width="100%">
+<tbody>
+<tr>
+<td style="width: 450.8pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="601">
+<p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_alamat_name"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+<p style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-size: 10.0pt;">
+</html>]]> 
+      </htmlData>  
+
+      <t t-esc="o.xquotationtrans_alamat"/>
+
+      <htmlData><![CDATA[<html>
+</span></strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</html>]]>
+</htmlData>                                                                    
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </template>             
+    </data>
+</odoo>

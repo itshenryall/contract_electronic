@@ -1,0 +1,267 @@
+<odoo>
+    <menuitem name="Data Merchant"
+        id="menu_merchdelegation_root"
+        sequence="4"/>
+    <!-- <menuitem id="menu_merch_main" parent="menu_merchdelegation_root" name="Merchant" sequence="2"/> -->
+
+    <record id="view_merch_delegation_contract_form" model="ir.ui.view">
+        <field name="name">Merchant form</field>
+        <field name="model">merch.delegation.contract</field>
+        <field name="arch" type="xml">
+            <form string="Merchant">
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar" options='{"preview_image":"image_medium"}'/>
+                        <div class="oe_title">
+                            <label for="Merchant Name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="xmerch_delegation_name"/>
+                            </h1>
+                        </div>                      
+                    <group>
+                        <field name="xmerch_delegation_npwp"/>
+                        <field name="xmerch_delegation_web"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="xmerch_delegation_telp"/>
+                        </group>
+                        <group>
+                            <field name="xmerch_delegation_mobile"/>
+                        </group>
+                    </group>                    
+                    <group>
+                        <field name="xmerch_delegation_alamat"/>
+                        <field name="xmerch_delegation_facsimile"/>
+                        <field name="xmerch_delegation_attention"/>
+                        <!-- <field name="xmerch_delegation_desc"/> -->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+        <record id="view_merch_delegation_contract_tree" model="ir.ui.view">
+            <field name="name">Merchant tree</field>
+            <field name="model">merch.delegation.contract</field>
+            <field name="field_parent">child_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Merchant">
+                    <field name="xmerch_delegation_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_merch_delegation_contract_filter" model="ir.ui.view">
+            <field name="name">Merchant</field>
+            <field name="model">merch.delegation.contract</field>
+            <field name="arch" type="xml">
+                <search string="Merchant">
+                    <field name="xmerch_delegation_name"/>
+                </search>
+             </field>
+        </record>
+
+        <record id="open_module_tree_merch_delegation_contract" model="ir.actions.act_window">
+            <field name="name">Merchant</field>
+            <field name="res_model">merch.delegation.contract</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_merch_delegation_contract_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Merchant.
+              </p>
+            </field>
+        </record>
+
+<!--         <menuitem
+            action="open_module_tree_merch_delegation_contract"
+            id="menu_tree_user_vendor"
+            parent="menu_merch_main"
+            sequence="1"/>     -->
+
+        <!-- Member Vendor -->
+        <record id="view_merch_delegation_user_form" model="ir.ui.view">
+            <field name="name">Merchant Delegation form</field>
+            <field name="model">merch.delegation.user</field>
+            <field name="arch" type="xml">
+                <form string="Merchant Delegation">
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar" options='{"preview_image":"image_medium"}'/>
+                        <div class="oe_title">
+                            <label for="Name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="xuser_merchdelegation_name"/>
+                            </h1>
+                        </div>
+                            <group>
+                                <field name="xuser_merchdelegation_number"/>
+                                <field name="xuser_merchdelegation_jabatan"/>
+                                <field name="xuser_merchdelegation_email" widget="email"/>
+                                <field name="xuser_merchdelegation_password" on_change="generatepass"/>
+                                <field name="xuser_merchdelegation_phone"/>
+                                <field name="xuser_merchdelegation_phonee"/>
+                                <field name="xuser_merchdelegation_user_department_id" on_change="onchange_xuser_merchdelegation_user_department_id(xuser_merchdelegation_user_department_id)" options='{"no_create": True, "no_open": True}'/>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_merch_delegation_user_tree" model="ir.ui.view">
+            <field name="name">Merchant Delegation tree</field>
+            <field name="model">merch.delegation.user</field>
+            <field name="arch" type="xml">
+                <tree string="Merchant Delegation">
+                    <field name="xuser_merchdelegation_user_department_id"/>
+                    <field name="xuser_merchdelegation_name"/>
+                    <field name="xuser_merchdelegation_email"/>
+                    <field name="xuser_merchdelegation_jabatan"/>
+                    <field name="xuser_merchdelegation_phone"/>
+                    <field name="xuser_merchdelegation_phonee"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_merch_delegation_user_filter" model="ir.ui.view">
+            <field name="name">Merchant Delegation</field>
+            <field name="model">merch.delegation.user</field>
+            <field name="arch" type="xml">
+                <search string="Merchant Delegation">
+                    <field name="xuser_merchdelegation_user_department_id"/>
+                </search>
+             </field>
+         </record>
+
+        <record model="ir.ui.view" id="kanban_view_merch_delegation_user">
+            <field name="name">Merchant Delegation</field>
+            <field name="model">merch.delegation.user</field>
+            <field name="priority">10</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_employee_kanban">
+                    <templates>
+                        <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('merch.delegation.user', 'image_medium', record.id.value)"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li t-if="record.xuser_merchdelegation_name.raw_value"><i class="fa fa-user"></i> <field name="xuser_merchdelegation_name"/></li>
+                                    <li t-if="record.xuser_merchdelegation_email.raw_value"><i class="fa fa-envelope"></i> <field name="xuser_merchdelegation_email"/></li>
+                                    <li t-if="record.xuser_merchdelegation_jabatan.raw_value"><i class="fa fa-folder"></i> <field name="xuser_merchdelegation_jabatan"/></li>
+                                    <li t-if="record.xuser_merchdelegation_user_department_id.raw_value"><strong><field name="xuser_merchdelegation_user_department_id"/></strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </t>
+                    </templates>
+                </kanban>
+
+            </field>
+        </record>
+
+        <record id="open_view_merch_delegation_user_tree" model="ir.actions.act_window">
+            <field name="name">Merchant Delegation Structure</field>
+            <field name="res_model">merch.delegation.user</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_merch_delegation_user_tree"/>
+            <field name="domain">[('parent_id','=',False)]</field>
+            <field name="search_view_id" ref="view_merch_delegation_user_filter"/>
+        </record>
+
+        <record id="open_view_merch_delegation_user_list" model="ir.actions.act_window">
+            <field name="name">Merchant Delegation</field>
+            <field name="res_model">merch.delegation.user</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="view_merch_delegation_user_filter"/>
+        </record>
+
+        <record id="open_view_merch_delegation_user_list_my" model="ir.actions.act_window">
+            <field name="name">Merchant Delegation</field>
+            <field name="res_model">merch.delegation.user</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="view_merch_delegation_user_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new delegation merchant.
+              </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_merch_delegation_user">
+            <field name="name">Merchant Delegation</field>
+            <field name="res_model">merch.delegation.user</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="view_merch_delegation_user_filter"/>
+            <field name="context">{
+                "search_default_xuser_merchdelegation_user_department_id": [active_id],
+                "default_xuser_merchdelegation_user_department_id": active_id}
+            </field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new delegation merchant.
+              </p>
+            </field>
+        </record>
+
+
+<!--         <menuitem action="open_view_merch_delegation_user_list_my" id="menu_open_view_merch_delegation_user_list_my" parent="menu_merch_main" sequence="2"/>  -->
+
+        <!-- Kanban Merchant -->
+        <record model="ir.ui.view" id="hr_merch_delegation_contract_kanban">
+            <field name="name">Merchant</field>
+            <field name="model">merch.delegation.contract</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_employee_kanban">
+                        <field name="color"/>
+                        <templates>
+                            <t t-name="kanban-box">
+                                <div class="oe_kanban_global_click">                            
+                                <div>
+                                    <div align="center">
+                                    <div t-attf-class="oe_kanban_content">
+                                        <!-- title -->
+                                    <strong><field name="xmerch_delegation_name"/></strong>
+                                    <br/>                                    
+                                    <img t-att-src="kanban_image('merch.delegation.contract', 'image_medium', record.id.value)"/>
+                                    <br />
+                                    <br />
+                                    <button class="btn btn-primary btn-xs" name="%(act_merch_delegation_user)d" type="action">List Merchant Delegation</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </t>
+                        </templates>
+                    </kanban>
+            </field>
+        </record>
+
+        <record id="open_module_history_merch_delegation_contract" model="ir.actions.act_window">
+            <field name="name">Merchant</field>
+            <field name="res_model">merch.delegation.contract</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="view_merch_delegation_contract_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                   Click to create a Merchant.
+                </p>
+            </field>
+        </record>
+
+    
+    <menuitem
+            action="open_module_history_merch_delegation_contract"
+            id="menu_open_module_history_merch_delegation_contract"
+            parent="menu_merchdelegation_root"
+            sequence="1" groups="contract_e.group_admin,contract_e.group_sales"/>       
+</odoo>                              

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data noupdate="1">
+        <record id="new_contract_mail_template" model="mail.template">
+            <field name="name">New Contract - Send by Email</field>
+			<field name="email_from">${object.company_id and object.company_id.email or '')|safe}</field>
+            <field name="subject">New Contract from sales (Number Contract ${object.xtelkomsel_transaction_number or 'n/a'})</field>
+            <field name="email_to">${object.xtransaction_vp_email}</field>
+<!--             <field name="email_to">henrysurawijaya@gmail.com</field> -->
+            <field name="model_id" ref="contract_e.model_transaction_econtract_telkomsel"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="report_template" ref="new_contract_template"/>
+            <field name="report_name">${(object.xtelkomsel_transaction_number or '').replace('/','_')}_${object.state == 'new' and 'new' or ''}</field>
+            <field name="lang">${object.xtransaction_vp_email.lang}</field>
+            <field name="body_html"><![CDATA[
+				<div style="font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+				    <p>Hello ${object.xtransaction_tseldelegation_name},</p>
+				    <p>A new merchant making contract </p>
+				    
+				    <p style="border-left: 1px solid #8e0000; margin-left: 30px;">
+				       &nbsp;&nbsp;<strong>Data Contract</strong><br />
+				       &nbsp;&nbsp;Sales Name: <strong>${object.xtransaction_sales_name}</strong><br />
+				       &nbsp;&nbsp;Request Contract: <strong>${object.xtransaction_date}</strong><br />
+				       &nbsp;&nbsp;Merchant: <strong>${object.xtransaction_merchdelegation_name}</strong><br />
+				       &nbsp;&nbsp;Address: <strong>${object.xtransaction_merchdelegation_alamat}</strong><br />
+				       &nbsp;&nbsp;Delegation: ${object.xtransaction_merchdelegation_name_user}<br />
+				       &nbsp;&nbsp;Delegation Phone Number: ${object.xtransaction_merchdelegation_phone}<br />
+				    </p>  
+				    <p>This is a link to your login page :</p><br>
+					<a href="http://localhost:8069">Click on this link</a>
+				    <p>Regards</p>
+				</div>
+            ]]></field>
+        </record>
+    </data>
+</openerp>

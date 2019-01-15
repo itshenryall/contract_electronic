@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+            <template id="report_new_contract">
+                <t t-call="report.html_container">         
+                    <t t-foreach="docs" t-as="doc">
+                        <t>          
+                            <div class="page"> 
+<htmlData><![CDATA[<html>
+     <div>
+<table cellpadding="0" cellspacing="0" style="border-collapse:collapse; width:474.4pt" align="center">
+      <tbody>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><strong><span style="font-family:Calibri">FORMULIR PERJANJIAN</span></strong></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><strong><span style="font-family:Calibri">FORM OF AGREEMENT</span></strong></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><strong><span style="font-family:Calibri">PENYEDIAAN</span></strong></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><strong><span style="font-family:Calibri">ON THE PROVISIONING OF</span></strong></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><strong><span style="font-family:Calibri">LAYANAN DIGITAL ADVERTISING</span></strong></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><strong><span style="font-family:Calibri">DIGITAL ADVERTISING SERVICE</span></strong></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-right: 22.95pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><span style="font-family:Calibri">No. :   </html>]]> 
+      </htmlData>  
+
+      <t t-esc="doc.xtelkomsel_transaction_number"/>
+
+      <htmlData><![CDATA[<html></span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><span style="font-family:Calibri">No. :   </html>]]> 
+      </htmlData>  
+
+      <t t-esc="doc.xtelkomsel_transaction_number"/>
+
+      <htmlData><![CDATA[<html></span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><strong><span style="font-family:Calibri">&nbsp;</span></strong></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 10.5pt;"><strong><span style="font-family:Calibri">&nbsp;</span></strong></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">Formulir Perjanjian Penyediaan Layanan Digital Advertising (selanjutnya disebut &ldquo;Perjanjian&rdquo;) ini dibuat dan diadakan pada tanggal </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xdate"/>
+
+                  <htmlData><![CDATA[<html> oleh dan di antara :</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">This Form of Agreement on the Provisioning of Digital Advertising Service (hereinafter, &ldquo;Agreement&rdquo;) is made and entered into on </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xdatex"/>
+
+                  <htmlData><![CDATA[<html> by and between:</span></p>
+
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <ol style="margin: 0pt; padding-left: 0pt;" type="1">
+                        <li style="margin-left: 12.97pt; text-align: justify; padding-left: 8.33pt; font-family: Calibri; font-size: 10.5pt;">PT Telekomunikasi Selular, suatu perseroan terbatas yang didirikan menurut hukum Negara Republik Indonesia, berkedudukan di Gedung Telkom Landmark Tower, Menara 1, Lantai 1 - 23, Jl. Jenderal Gatot Subroto Kav. 52, Jakarta 12710, Indonesia, yang dalam hal ini diwakili oleh </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_tseldelegation_name"/>
+
+                  <htmlData><![CDATA[<html>, </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_tseldelegation_position"/>
+
+                  <htmlData><![CDATA[<html>, yang bertindak selaku kuasa dari Direksi PT Telekomunikasi Selular dan karenanya sah bertindak untuk dan atas nama serta mewakili PT Telekomunikasi Selular (selanjutnya disebut &ldquo;Telkomsel&rdquo;); dan</li>
+                  </ol>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <ol style="margin: 0pt; padding-left: 0pt;" type="1">
+                        <li style="margin-left: 12.97pt; text-align: justify; padding-left: 3.13pt; font-family: Calibri; font-size: 10.5pt;">PT Telekomunikasi Selular, a limited liability company duly established under the laws of the Republic of Indonesia, having its domicile at Gedung Telkom Landmark Tower, Menara 1, Lantai 1 - 23, Jl. Jenderal Gatot Subroto Kav. 52, Jakarta 12710, Indonesia, in this matter represented by </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_tseldelegation_name"/>
+
+                  <htmlData><![CDATA[<html>, </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_tseldelegation_position"/>
+
+                  <htmlData><![CDATA[<html>, acting as a proxy of the Board of Directors of PT Telekomunikasi Selular and as such lawfully acting for and on behalf of as well as representing PT Telekomunikasi Selular (hereinafter, &ldquo;Telkomsel&rdquo;); and</li>
+                  </ol>
+
+                  <p style="margin-top: 0pt; margin-left: 18pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 22.95pt; margin-bottom: 0pt; text-indent: -22.95pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">2.</span><span style="font-family:Calibri">&nbsp;&nbsp;   </span><span style="font-family:Calibri">   </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_name"/>
+
+                  <htmlData><![CDATA[<html>, beralamat di </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_alamat"/>
+
+                  <htmlData><![CDATA[<html>, yang dalam hal ini diwakili oleh </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_name_user"/>
+
+                  <htmlData><![CDATA[<html> dalam kedudukannya selaku </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_jabatan"/>
+
+                  <htmlData><![CDATA[<html> dari dan karenanya sah bertindak untuk dan atas nama serta mewakili </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_name"/>
+
+                  <htmlData><![CDATA[<html>, Warga Negara Indonesia, yang dalam hal ini bertindak untuk dan demi kepentingan diri sendiri  (selanjutnya disebut &ldquo;Pengguna&rdquo; atau &ldquo;Pengiklan&rdquo;).</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <ol start="2" style="margin: 0pt; padding-left: 0pt;" type="1">
+                        <li style="margin-left: 12.97pt; text-align: justify; padding-left: 3.13pt; font-family: Calibri; font-size: 10.5pt;"></html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_name"/>
+
+                  <htmlData><![CDATA[<html>, having its address at </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_alamat"/>
+
+                  <htmlData><![CDATA[<html>, in this matter represented by </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_name_user"/>
+
+                  <htmlData><![CDATA[<html> in [ his / her ] capacity as </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_jabatan"/>
+
+                  <htmlData><![CDATA[<html> of and as such lawfully acting for and on behalf of as well as representing </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_name"/>
+
+                  <htmlData><![CDATA[<html>, an Indonesian citizen, in this matter acting for [ himself / herself ] and for [ his / her ] own interest  (hereinafter, the &ldquo;User&rdquo; or &ldquo;Advertiser&rdquo;).</li>
+                  </ol>
+
+                  <p style="margin-top: 0pt; margin-left: 16.1pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; font-size: 10.5pt;"><span style="font-family:Calibri">Telkomsel dan pengguna/pengiklan menerangkan terlebih dahulu sebagai berikut:</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">Telkomsel and the User/Advertiser firstly declare as follows:</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 22.95pt; margin-bottom: 0pt; text-indent: -21.25pt; font-size: 11pt;"><span style="font-family:Calibri; font-size:10.5pt">A.</span><span style="font-family:Calibri; font-size:10.5pt">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:Calibri; font-size:10.5pt">Bahwa, Telkomsel adalah penyelenggara jaringan telekomunikasi selular yang memberikan layanan di seluruh wilayah Negara Republik Indonesia, dan telah melakukan pendaftaran usaha pariwisata untuk menyelenggarakan bidang usaha jasa informasi pariwisata dan usaha periklanan;</li>
+                  </ol>
+                  </td>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 22.95pt; margin-bottom: 0pt; text-indent: -21.25pt; font-size: 11pt;"><span style="font-family:Calibri; font-size:10.5pt">A.</span><span style="font-family:Calibri; font-size:10.5pt">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:Calibri; font-size:10.5pt">Whereas, Telkomsel is an operator which provides services throughout the territory of the Republic of Indonesia, and has done a tourism business registration to conduct tourism information services, and business namely the business of tourism information services and advertising;</li>
+                  </ol>
+
+                  <p style="margin-top: 0pt; margin-left: 16.1pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><strong><span style="font-family:Calibri">&nbsp;</span></strong></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 22.95pt; margin-bottom: 0pt; text-indent: -21.25pt; font-size: 11pt;"><span style="font-family:Calibri; font-size:10.5pt">B.</span><span style="font-family:Calibri; font-size:10.5pt">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:Calibri; font-size:10.5pt">Bahwa, Pengguna bermaksud memanfaatkan dan menggunakan layanan digital advertising yang disediakan oleh Telkomsel, </span><span style="font-family:Calibri">untuk keperluan</span><span style="font-family:Calibri; font-size:10.5pt"> pengiriman materi infoormasi promosi yang diinginkannya kepada para pengguna. </span></p>
+                  </td>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 22.95pt; margin-bottom: 0pt; text-indent: -21.25pt; font-size: 11pt;"><span style="font-family:Calibri; font-size:10.5pt">B.</span><span style="font-family:Calibri; font-size:10.5pt">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:Calibri; font-size:10.5pt">Whereas, User intends to make use of and utilize the digital advertising service provided by Telkomsel, for the purpose of delivering certain information/promotion content as designated by the User to cellular telecommunication services</li>
+                  </ol>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">Oleh karena itu, dengan ini DISEPAKATI oleh Telkomsel dan Pengguna sebagai berikut:</span></p>
+
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">Now therefore, it is AGREED by Telkomsel and the User as follows:</span></p>
+
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <ol style="margin: 0pt; padding-left: 0pt;" type="1">
+                        <li style="margin-left: 12.97pt; text-align: justify; padding-left: 8.33pt; font-family: Calibri; font-size: 10.5pt;">Telkomsel dan Pengguna dengan ini mengadakan dan mengikatkan diri pada Perjanjian ini berdasarkan dan dengan tunduk pada, dan karenanya menyepakati, syarat-syarat dan ketentuan-ketentuan sebagaimana diatur di dalam Perjanjian ini.</li>
+                  </ol>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <ol style="margin: 0pt; padding-left: 0pt;" type="1">
+                        <li style="margin-left: 12.97pt; text-align: justify; padding-left: 10.23pt; font-family: Calibri; font-size: 10.5pt;">Telkomsel and the User hereby enter into and bind themselves to this Agreement under and subject to, and therefore agree to, the terms and conditions as set out in this Agreement.</li>
+                  </ol>
+
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 22.7pt; margin-bottom: 0pt; text-indent: -21.3pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">2.</span><span style="font-family:Calibri">&nbsp;&nbsp;  </span><span style="font-family:Calibri">Perjanjian ini terdiri dari dan meliputi bagian-bagian sebagai berikut disertai dengan lampiran-lampirannya masing-masing, yang seluruhnya merupakan satu kesatuan yang tidak terpisahkan dan merupakan suatu perjanjian:</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 22.7pt; margin-bottom: 0pt; text-indent: -21.3pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">2</span><span style="font-family:Calibri">&nbsp;&nbsp;   </span><span style="font-family:Calibri">This Agreement consists of and includes the following sections together with their respective appendixes, all of which constitute an integral and inseparable part and form an agreement:</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <ol style="margin: 0pt; padding-left: 0pt;" type="a">
+                        <li style="margin-left: 35.38pt; text-align: justify; padding-left: 9.07pt; font-family: Calibri; font-size: 10.5pt;">Bagian Utama, yakni bagian ini yang memuat tandatangan-tandatangan dari individu-individu yang mewakili Telkomsel dan Pengguna dalam mengikat masing-masing pihak tersebut pada Perjanjian ini.</li>
+                  </ol>
+
+                  <p style="margin-top: 0pt; margin-left: 44.45pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 44pt; margin-bottom: 0pt; text-indent: -21.3pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">a.</span><span style="display:inline-block; text-indent:0pt; width:13.62pt">&nbsp;</span><span style="font-family:Calibri">Main Section, being this section which contains the signatures of the individuals representing Telkomsel and the User in binding each such party to thisAgreement.</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <ol start="2" style="margin: 0pt; padding-left: 0pt;" type="a">
+                        <li style="margin-left: 35.87pt; text-align: justify; padding-left: 8.58pt; font-family: Calibri; font-size: 10.5pt;">Bagian I : Syarat-Syarat dan Ketentuan-Ketentuan Umum yang dimuat dalam (&hellip;link&hellip;) yang di-upload pada tanggal xxx.</li>
+                  </ol>
+
+                  <p style="margin-top: 0pt; margin-left: 44.45pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 44pt; margin-bottom: 0pt; text-indent: -21.3pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">b.</span><span style="display:inline-block; text-indent:0pt; width:13.13pt">&nbsp;</span><span style="font-family:Calibri">Section I : General Terms and Conditions as set out on (&hellip;link&hellip;) which uploaded on xxx.</span><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <ol start="3" style="margin: 0pt; padding-left: 0pt;" type="a">
+                        <li style="margin-left: 34.79pt; padding-left: 9.66pt; font-family: Calibri; font-size: 10.5pt;">BagianII:Layanan-Layanan yang disediakan bagi Pengguna dan Daftar Harga yang dimuat dalam (&hellip;link&hellip;) yang di-upload pada tanggal xxx.</li>
+                  </ol>
+
+                  <p style="margin-top: 0pt; margin-left: 44.45pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 44pt; margin-bottom: 0pt; text-indent: -21.3pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">c.</span><span style="display:inline-block; text-indent:0pt; width:14.21pt">&nbsp;</span><span style="font-family:Calibri">Section II : Services provided to the User and Price List as set out on (&hellip;link&hellip;) which uploaded on xxx.</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <ol start="4" style="margin: 0pt; padding-left: 0pt;" type="a">
+                        <li style="margin-left: 35.87pt; text-align: justify; padding-left: 8.58pt; font-family: Calibri; font-size: 10.5pt;">Bagian III :Syarat-Syarat dan Ketentuan-Ketentuan Khusus sehubungan dengan Layanan yang disediakan bagi Pengguna yang dimuat dalam (&hellip;link&hellip;) yang di-upload pada tanggal xxx.</li>
+                  </ol>
+
+                  <p style="margin-top: 0pt; margin-left: 44.45pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 44pt; margin-bottom: 0pt; text-indent: -21.3pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">d.</span><span style="display:inline-block; text-indent:0pt; width:13.13pt">&nbsp;</span><span style="font-family:Calibri">Section III : Specific Terms and Conditions in relation to the Services provided to the User as set out on (&hellip;link&hellip;) which uploaded on xxx.</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 44pt; margin-bottom: 0pt; text-indent: -21.3pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">e.</span><span style="display:inline-block; text-indent:0pt; width:13.42pt">&nbsp;</span><span style="font-family:Calibri">Bagian IV : Ketentuan dan Persyaratan Tambahan yang dimuat dalam (&hellip;link&hellip;) yang di-upload pada tanggal xxx. </span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 44pt; margin-bottom: 0pt; text-indent: -21.3pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">e.</span><span style="display:inline-block; text-indent:0pt; width:13.42pt">&nbsp;</span><span style="font-family:Calibri">Section IV : Additional Term and Conditions as set out on (&hellip;link&hellip;) which uploaded on xxx.</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">Seluruh Bagian-Bagian dari Perjanjian ini merupakan bagian yang tidak terpisahkan dari Perjanjian ini. Apabila terdapat perbedaan antara ketentuan-ketentuan dalam Bagian I</span><span style="font-family:Calibri">&nbsp; </span><span style="font-family:Calibri">tentang Syarat-Syarat dan Ketentuan-Ketentuan Umum dengan ketentuan dalam Bagian lain dari Perjanjian ini, maka yang berlaku adalah ketentuan-ketentuan dalam Bagian I.</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10.5pt;"><span style="font-family:Calibri">The Sections of this Agreement shall constitute integral parts of this Agreement. In the event of any discrepancy between the provisions in Section I regarding General Terms and Conditions and any provisions of any other Section of this Agreement, the provisions of Section I shall prevail.</span></p>
+
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 29.8pt; margin-bottom: 0pt; text-indent: -28.35pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+
+                  <p style="margin-top: 0pt; margin-left: 29.8pt; margin-bottom: 0pt; text-indent: -28.35pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+
+                  <p style="margin-top: 0pt; margin-left: 29.8pt; margin-bottom: 0pt; text-indent: -28.35pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 29.8pt; margin-bottom: 0pt; text-indent: -28.35pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+
+                  <p style="margin-top: 0pt; margin-left: 29.8pt; margin-bottom: 0pt; text-indent: -28.35pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+
+                  <p style="margin-top: 0pt; margin-left: 29.8pt; margin-bottom: 0pt; text-indent: -28.35pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+
+                  <p style="margin-top: 0pt; margin-left: 29.8pt; margin-bottom: 0pt; text-indent: -28.35pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 44pt; margin-bottom: 0pt; text-indent: -42.55pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">3.</span><span style="font-family:Calibri">&nbsp; </span><span style="font-family:Calibri">a.</span><span style="display:inline-block; text-indent:0pt; width:10.28pt">&nbsp;</span><span style="font-family:Calibri">Perjanjian ini berlaku efektif sejak</span><span style="font-family:Calibri">&nbsp;&nbsp; </span><span style="font-family:Calibri">tanggal Perjanjian ini, dan akan berakhir dengan sebagaimana mestinya pada tanggal terakhir dari jangka waktu penggunaan Layanan oleh Pengguna sebagaimana dimaksud pada butir b. di bawah.</span></p>
+                  </td>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 44pt; margin-bottom: 0pt; text-indent: -42.55pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">3.</span><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;</span><span style="font-family:Calibri">a.</span><span style="display:inline-block; text-indent:0pt; width:10.28pt"></span><span style="font-family:Calibri">This Agreement takes effect as from the</span><span style="font-family:Calibri">&nbsp;&nbsp; </span><span style="font-family:Calibri">date of this Agreement, and shall duly
+                  terminate on the expiry date of the
+                  period of the use of the Services by the
+                  User as referred to in paragraph b.
+                  below.</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 44pt; margin-bottom: 0pt; text-indent: -21.3pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span><span style="font-family:Calibri">b.</span><span style="display:inline-block; text-indent:0pt; width:10.76pt">&nbsp;</span><span style="font-family:Calibri">Jangka waktu penggunaan Layanan oleh Pengguna adalah sejak tanggal </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_date_begin"/>
+
+                  <htmlData><![CDATA[<html> sampai dengan tanggal </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_end_date"/>
+
+                  <htmlData><![CDATA[<html>.</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 44pt; margin-bottom: 0pt; text-indent: -21.3pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span><span style="font-family:Calibri">b.</span><span style="display:inline-block; text-indent:0pt; width:10.76pt">&nbsp;</span><span style="font-family:Calibri">The period of the use of the Services by the User shall be from </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_date_begin"/>
+
+                  <htmlData><![CDATA[<html> until </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_end_date"/>
+
+                  <htmlData><![CDATA[<html>.</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 222.85pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 22.7pt; margin-bottom: 0pt; text-indent: -21.25pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">4.</span><span style="display:inline-block; text-indent:0pt; width:13.28pt">&nbsp;</span><span style="font-family:Calibri">Dengan merujuk kepada ketentuan Pasal 12 ayat 5</span><span style="font-family:Calibri">&nbsp; </span><span style="font-family:Calibri">dari Bagian I dari Perjanjian ini, rekening bank Telkomsel untuk menerima pembayaran dari Pengguna berdasarkan Perjanjian ini adalah sebagai berikut:</span></p>
+                  </td>
+                  <td style="width: 229.95pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 22.7pt; margin-bottom: 0pt; text-indent: -21.25pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">4.</span><span style="display:inline-block; text-indent:0pt; width:13.28pt">&nbsp;</span><span style="font-family:Calibri">With reference to Article 12 paragraph 5 of Section I of this Agreement, Telkomsel&rsquo;s bank account to receive payments from the User under this Agreement shall be as follows:</span></p>
+                  </td>
+            </tr>
+      </tbody>
+</table>
+
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 108%; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 108%; font-size: 10.5pt;">&nbsp;</p>
+
+
+<table style="width: 538.667px; margin-left: auto; border-collapse: collapse; margin-right: auto;" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr style="height: 17.8px;">
+<td style="width: 303px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17.8px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">Nama Pemilik Rekening / Name of Account Beneficiary</span></p>
+</td>
+<td style="width: 10px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17.8px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 182.667px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17.8px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">:</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;">PT TELKOMSEL</span></p>
+</td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 303px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">Bank</span></p>
+</td>
+<td style="width: 10px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 182.667px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">:</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;"></html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_tseldelegation_bank_name"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 303px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">Cabang / Branch</span></p>
+</td>
+<td style="width: 10px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 182.667px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt; text-align: center;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 303px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">Alamat Cabang Bank / Address of Bank Branch</span></p>
+</td>
+<td style="width: 10px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 182.667px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">:</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;"></html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_tseldelegation_alamat_bank"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 303px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">No. Rekening / Account No</span></p>
+</td>
+<td style="width: 10px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 182.667px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top; height: 17px;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">:</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;"></html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_tseldelegation_norek"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 108%; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;<br /><br /></span></p>
+
+<div>
+<table cellpadding="0" cellspacing="0" style="border-collapse:collapse; width:453.6pt" align="center">
+      <tbody>
+            <tr>
+                  <td colspan="2" style="width: 216pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 22.7pt; margin-bottom: 0pt; text-indent: -22.7pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">5.</span><span style="display:inline-block; text-indent:0pt; width:14.73pt">&nbsp;</span><span style="font-family:Calibri">Dengan merujuk kepada ketentuan Pasal 26 ayat 1.b. dari Bagian I dari Perjanjian ini, alamat dan nomor faksimili masing-masing Telkomsel dan Pengguna, individu (-individu) untuk perhatian siapa suatu pemberitahuan atau komunikasi atau korespondensi lainnya ditujukan kepada Telkomsel atau Pengguna, serta informasi lainnya dari Telkomsel dan Pengguna untuk keperluan komunikasi atau korespondensi di antara Telkomsel dan Pengguna adalah sebagai berikut:</span></p>
+                  </td>
+                  <td colspan="2" style="width: 216pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-left: 22.7pt; margin-bottom: 0pt; text-indent: -22.7pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">5.</span><span style="display:inline-block; text-indent:0pt; width:14.73pt">&nbsp;</span><span style="font-family:Calibri">With reference to Article 26 paragraph 1.b. of Section I of this Agreement, the address and facsimile number(s) of each of Telkomsel and the User, the person(s) for whose attention a notification or other communication or correspondence is addressed to Telkomsel or the User, and other information of Telkomsel and the User for the purpose of any communication or correspondence between Telkomsel and the User are as follows:</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="vertical-align: top;">&nbsp;</td>
+                  <td style="width: 194.45pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 194.45pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="vertical-align: top;">&nbsp;</td>
+            </tr>
+            <tr style="height: 0pt;">
+                  <td style="width: 21.55pt;">&nbsp;</td>
+                  <td style="width: 205.25pt;">&nbsp;</td>
+                  <td style="width: 205.25pt;">&nbsp;</td>
+                  <td style="width: 21.55pt;">&nbsp;</td>
+            </tr>
+      </tbody>
+</table>
+
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 108%; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 108%; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div>
+<br>
+<br>
+<br>
+<br>
+<table style="margin-right: auto; margin-left: auto; border-collapse: collapse; width: 606px;" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="width: 250px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">a.</span><span style="width: 28.69pt; display: inline-block;">&nbsp;</span><span style="font-family: Calibri;">Jika kepada Telkomsel:</span></p>
+</td>
+<td style="width: 111.383px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 296.617px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="2">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">a.</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;">If to Telkomsel:</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 408px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="3">
+<br>
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">PT TELEKOMUNIKASI SELULAR </span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 408px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="3">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">Jl. Jenderal Gatot Subroto Kav. 52</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 408px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="3">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">Jakarta 12710</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 166px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="2">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">Telpon / Telephone</span><span style="width: 28.56pt; display: inline-block;">&nbsp;</span></p>
+</td>
+<td style="width: 242px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">:</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;">62 21 </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_tseldelegation_no_telp"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 166px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="2">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">Faksimili / Facsimile</span><span style="width: 27.23pt; display: inline-block;">&nbsp;</span></p>
+</td>
+<td style="width: 242px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">:</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;">62 21 </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_tseldelegation_facsimile"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 166px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="2">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">U.p. / Attention</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="width: 23.66pt; display: inline-block;">&nbsp;</span></p>
+</td>
+<td style="width: 242px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">:</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;"></html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_tseldelegation_attention"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">b.</span><span style="width: 28.22pt; display: inline-block;">&nbsp;</span><span style="font-family: Calibri;">Jika kepada Pengguna:</span></p>
+</td>
+<td style="width: 111.383px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 296.617px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="2">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">b.</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;">If to the User:</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 408px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="3">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;"></html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_name"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 408px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="3">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;"></html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_alamat"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 166px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="2">
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10pt;"><span style="font-family: Calibri;">Telpon / Telephone</span><span style="width: 28.56pt; display: inline-block;">&nbsp;</span></p>
+</td>
+<td style="width: 242px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">:</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;">62 </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_phone"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 166px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="2">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">Mobile</span><span style="width: 7.36pt; display: inline-block;">&nbsp;</span><span style="width: 36pt; display: inline-block;">&nbsp;</span><span style="width: 36pt; display: inline-block;">&nbsp;</span></p>
+</td>
+<td style="width: 242px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">:</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;">62 </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_phone"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 166px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="2">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">Faksimili / Facsimile</span><span style="width: 27.23pt; display: inline-block;">&nbsp;</span></p>
+</td>
+<td style="width: 242px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">:</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;">62 21 </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_phone"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 188px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</td>
+<td style="width: 166px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" colspan="2">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">U.p / Attention</span><span style="width: 27.23pt; display: inline-block;">&nbsp;</span></p>
+</td>
+<td style="width: 242px; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 10pt;"><span style="font-family: Calibri;">:</span><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Calibri;">62 21 </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_merchdelegation_phone"/>
+
+                  <htmlData><![CDATA[<html></span></p>
+</td>
+</tr>
+<tr style="height: 0pt;">
+<td style="width: 188px;">&nbsp;</td>
+<td style="width: 111.383px;">&nbsp;</td>
+<td style="width: 54.6167px;">&nbsp;</td>
+<td style="width: 242px;"></td>
+</tr>
+</tbody>
+</table>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 108%; font-size: 10pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</div>
+
+<div align="center">
+<table cellpadding="0" cellspacing="0" style="border-collapse:collapse; margin-left:21.3pt; width:436.2pt" >
+      <tbody>
+            <tr>
+                  <td style="width: 207.3pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;" align="center">
+                  <ol start="6" style="margin: 0pt; padding-left: 0pt;" type="1">
+                        <li style="margin-left: 12.97pt; text-align: justify; padding-left: 8.33pt; font-family: Calibri; font-size: 10.5pt;">Setiap perubahan terhadap Perjanjian ini tidak berlaku dan tidak mengikat bagi Para Pihak kecuali apabila perubahan tersebut dituangkan secara tertulis dan ditandatangani oleh wakil-wakil yang sah dari Para Pihak.&nbsp; Setelah perubahan tersebut ditandatangani dengan sebagaimana mestinya oleh wakil-wakil yang sah dari Para Pihak, perubahan tersebut akan menjadi satu kesatuan dengan dan bagian yang tidak terpisahkan dari Perjanjian ini.</li>
+                  </ol>
+
+                  <p style="margin-top: 0pt; margin-left: 21.3pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 207.3pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <ol start="6" style="margin: 0pt; padding-left: 0pt;" type="1">
+                        <li style="margin-left: 19.52pt; text-align: justify; padding-left: 5.03pt; font-family: Calibri; font-size: 10.5pt;">Any amendment to this Agreement shall not be valid and not be binding upon the Parties unless such amendment is made in writing and executed by the authorized representatives of the Parties.&nbsp; Once duly executed by the authorized representatives of the Parties, such amendment shall constitute an integral and inseparable part of this Agreement.</li>
+                  </ol>
+
+                  <p style="margin-top: 0pt; margin-left: 21.3pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+            <tr>
+                  <td style="width: 207.3pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">Perjanjian ini dibuat dalam 2 (dua) rangkap asli, yang masing-masing ditandatangani dengan sebagaimana mestinya oleh Telkomsel dan Pengguna pada tanggal sebagaimana disebut di awal dari Bagian Utama dari Perjanjian ini, dan masing-masing mempunyai kekuatan hukum yang sama.</span><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br />
+                  <br />
+                  <span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+                  <td style="width: 207.3pt; padding-right: 5.4pt; padding-left: 5.4pt; vertical-align: top;">
+                  <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-size: 10.5pt;"><span style="font-family:Calibri">This Agreement is made in 2 (two) sets of original, each is duly signed by Telkomsel and the User on the date mentioned at the beginning of the Main Section of this Agreement, and each has equal legal force.</span><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br />
+                  <br />
+                  <span style="font-family:Calibri">&nbsp;</span></p>
+                  </td>
+            </tr>
+
+<table width="100%">
+<tbody>
+<tr>
+<td width="291">
+<p style="text-align: center;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; PT Telekomunikasi Selular&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br /> <br /> <br />  </strong></p>
+</td>
+<td style="text-align: center;" width="291">
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_tseldelegation_name"/>
+
+                  <htmlData><![CDATA[<html> Selular&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br /> <br /> <br /> </strong></p>
+</td>
+</tr>
+<tr style="text-align: center;">
+<td width="50%">
+<p></html>]]> 
+                  </htmlData>  
+
+                  <!-- <span t-field="doc.xtransaction_vp_sign" t-field-options='{"widget": "image"}'/> -->
+<!--                   <img t-if="doc.xtransaction_vp_sign" t-att-src="'data:image/jpg;base64,%s' % (doc.xtransaction_vp_sign,)" style="max-height:100pt;max-width:60%"/> -->
+
+                  <htmlData>
+<![CDATA[<html>
+</p>
+</td>
+<td width="50%">
+<p></html>]]> 
+                  </htmlData>  
+<!-- <img t-if="doc.xtransaction_merchdelegation_signature" t-att-src="'data:image/jpg;base64,%s' % (doc.xtransaction_merchdelegation_signature,)" style="max-height:100pt;max-width:60%"/> -->
+
+      
+                  <htmlData>
+<![CDATA[<html>
+</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;" width="291">
+<p> 
+      </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_vp_position"/>
+
+                  <htmlData><![CDATA[<html> /
+      </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_vp_department"/>
+
+                  <htmlData><![CDATA[<html> &nbsp;&nbsp;</p>
+</td>
+<td width="291">
+<p style="text-align: center;"> 
+      </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_sales_position"/>
+
+                  <htmlData><![CDATA[<html> /
+      </html>]]> 
+                  </htmlData>  
+
+                  <t t-esc="doc.xtransaction_sales_department"/>
+
+                  <htmlData><![CDATA[<html>  &nbsp;&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+      </tbody>
+</table>
+</div>
+    </html>]]>
+</htmlData>
+  <div class="watermark" style="position:center;margin-top:-20px;opacity:0.25;font-size:1em;font-style:italic;width:100%;text-align:center;z-index:1000;">
+                        
+  </div>
+                            </div>        
+                        </t>
+                    </t>
+                </t>
+            </template>                          
+    
+    </data>
+</odoo>

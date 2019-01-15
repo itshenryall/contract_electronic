@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data noupdate="1">
+        <record id="reject_contract_sales_mail_template" model="mail.template">
+            <field name="name">Reject Contract - Send by Email</field>
+			<field name="email_from">${object.company_id and object.company_id.email or '')|safe}</field>
+            <field name="subject">Reject Contract from VP</field>
+            <field name="email_to">${object.xtransaction_sales_email},${object.xtransaction_merchdelegation_email}</field>
+            <field name="model_id" ref="contract_e.model_transaction_econtract_telkomsel"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="report_template" ref="reject_contract_template"/>
+            <field name="report_name">${(object.xtelkomsel_transaction_number or '').replace('/','_')}_${object.state == 'new' and 'new' or ''}</field>
+            <field name="lang">${object.xtransaction_merchdelegation_email.lang}</field>
+            <field name="body_html"><![CDATA[
+				<div style="font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+				    <p>Hello Merchant ${object.xtransaction_merchdelegation_name} and ${object.xtransaction_merchdelegation_name_user}</p>
+				    <p>Your contract request has been rejected. Check file to find out why your request was rejected.</p>
+				    <p>Regards</p>
+				</div>
+            ]]></field>
+        </record>
+    </data>
+</openerp>
