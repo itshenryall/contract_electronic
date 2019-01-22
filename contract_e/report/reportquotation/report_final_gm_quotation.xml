@@ -39,7 +39,7 @@
 </html>]]> 
       </htmlData>  
 
-      <t t-esc="o.xquotationtrans_usage_order"/>
+      <t t-esc="o.xquotationtrans_quotation_order"/>
 
       <htmlData><![CDATA[<html>
 </span></strong></p>

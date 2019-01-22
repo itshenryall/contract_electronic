@@ -157,5 +157,342 @@
             id="menu_open_module_tree_contract_otp"
             parent="menu_verif_otp"
             sequence="1" groups="contract_e.group_admin,contract_e.group_sales,contract_e.group_vp"/>
+
+    <!-- ORDER -->
+    <record id="view_quotation_final_form_otp" model="ir.ui.view">
+        <field name="name">Order Final form</field>
+        <field name="model">quotation.transaction.telkomsel</field>
+        <field name="arch" type="xml">
+            <form string="Order Final" create="false" edit="false" delete="false">
+                <sheet>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="xquotationtrans_number_quotation"/>
+                            </h1>
+                        </div> 
+                        <group>
+                            <field name="xquotationtrans_quotation_order"/>
+                            <field name="xquotationtrans_sales_contract_id" invisible="1"/>
+                            <field name="xquotationtrans_sales_name" invisible="1"/>
+                            <field name="xquotationtrans_sales_phone" invisible="1"/>
+                            <field name="xquotationtrans_sales_email" invisible="1"/>
+                            <field name="xquotationtrans_sales_department" invisible="1"/>
+                            <field name="xquotationtrans_name_vp" invisible="1"/>
+                            <field name="xquotationtrans_name_gm" invisible="1"/>
+                            <field name="xquotationtrans_email_vp" invisible="1"/>
+                            <field name="xquotationtrans_email_gm" invisible="1"/>
+                            <field name="xquotationtrans_vp_department" invisible="1"/>
+                            <field name="xquotationtrans_gm_department" invisible="1"/>
+                            <field name="xquotationtrans_sales_position" invisible="1"/>
+                            <field name="xquotationtrans_vp_position" invisible="1"/>
+                            <field name="xquotationtrans_gm_position" invisible="1"/>
+                            <field name="xquotationtrans_number_contract_id" on_change="onchange_xquotationtrans_number_contract_id(xquotationtrans_number_contract_id)"
+                                        domain="[('xtransaction_sales_id', '=', xquotationtrans_sales_contract_id)]"
+                                        context="{'show_service': 1}"
+                                        options='{"always_reload": True, "highlight_first_line": True, "no_create": True, "no_open": True}'/>
+                        </group>
+                    <group>
+                        <group string="Client">
+                            <field name="xquotationtrans_company_npwp"/>
+                            <field name="xquotationtrans_company_contract_id"/>
+                            <field name="xquotationtrans_company_alamat" invisible="1"/>
+                            <field name="xquotationtrans_client_delegation_contract_id"/>
+                            <field name="xquotationtrans_client_delegation_jabatan" invisible="1"/>
+                            <field name="xquotationtrans_client_delegation_email" invisible="1"/>
+                            <field name="xquotationtrans_client_delegation_phone" invisible="1"/>
+                            <field name="xquotationtrans_company_product"/>
+                            <field name="xquotationtrans_company_brand_category"/>
+                            <field name="xquotationtrans_company_name"/>
+                            <field name="xquotationtrans_date"/>
+                            <field name="xquotationtrans_merchdelegation_name"/>
+                            <field name="xquotationtrans_merchdelegation_email"/>
+                            <field name="xquotationtrans_merchdelegation_phone"/>
+                            <field name="xquotationtrans_invoices_address"/>
+                        </group>
+                        <group string="Telkomsel">
+                            <field name="xquotationtrans_pic_telkomsel"/>
+                            <field name="xquotationtrans_pic_telkomsel_phone"/>
+                        </group>
+                    </group>
+                    <group>
+                        <!-- ORDER -->
+                        <field name="xquotationtrans_list_rate_card_ids">
+                            <tree string="List Perangkat" class="my_custom_class" editable="bottom">
+                                <field name="xquotationtrans_main_ratecard_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="xquotationtrans_inventory_ratecard_id" domain="[('xinventoryrate_ratecard_id', '=', xquotationtrans_main_ratecard_id)]" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="xquotationtrans_detailinventory_ratecard_id" domain="[('xdetailratecard_inventory_id', '=', xquotationtrans_inventory_ratecard_id)]" on_change="onchange_xquotationtrans_detailinventory_ratecard_id(xquotationtrans_detailinventory_ratecard_id)" context="{'show_service': 1}" options='{"always_reload": True, "highlight_first_line": True, "no_create": True, "no_open": True}'/>
+                                <field name="xquotationtrans_detailinventory_remark"/>
+                                <field name="xquotationtrans_date_begin"/>                               
+                                <field name="xquotationtrans_end_date"/>                               
+                                <field name="xquotationtrans_qty"/>                               
+                                <field name="xquotationtrans_detailinventory_rate"/>
+                                <!-- <field name="xquotationtrans_harga_sales"/>     -->              
+                                <field name="xquotationtrans_total"/>                               
+                            </tree>
+                        </field>
+                        <field name="xquotationtrans_total_harga"/>
+                        <field name="xquotationtrans_discount"/>                           
+                        <field name="xquotationtrans_total_hargax" on_change="update_agesm_onchange"/>   
+                        <!-- <field name="hargappn"/> -->     
+                        <field name="xquotationtrans_discount_ppnx" on_change="xxxx" invisible='1'/>        
+                        <field name="xquotationtrans_total_bayar_fix"/>                      
+                    </group>
+                    <notebook>
+                        <page name="alamatelkomsel" string="Info Telkomsel" invisible="1">
+                            <group>
+                                <field name="xquotationtrans_alamat_name" invisible="1"/>
+                                <field name="xquotationtrans_alamat" invisible="1"/>
+                                <field name="xquotationtrans_lantai" invisible="1"/>
+                                <field name="xquotationtrans_no_telp" invisible="1"/>
+                                <field name="xquotationtrans_facsimile" invisible="1"/>
+                                <field name="xquotationtrans_attention" invisible="1"/>
+                            </group>
+                        </page>  
+                        <page name="banktsel" string="Bank Info" invisible="1">
+                            <group>
+                                <field name="xquotationtrans_account_bank_name" invisible="1"/>
+                                <field name="xquotationtrans_bank_name" invisible="1"/> 
+                                <field name="xquotationtrans_alamat_bank" invisible="1"/>
+                                <field name="xquotationtrans_norek" invisible="1"/>
+                            </group>
+                        </page>
+                        <page name="sign" string="Signature">
+                             <group>
+                                <field name="xquotationtrans_sign_vp" widget="image" class="oe_avatar" options='{"preview_image": "image_medium"}' invisible="1"/>
+                                <field name="xquotationtrans_sign_gm" widget="image" class="oe_avatar" options='{"preview_image": "image_medium"}' invisible="1"/>
+                                <field name="xquotationtrans_sign_sales" widget="image" class="oe_avatar" options='{"preview_image": "image_medium"}' invisible="1"/>
+                                <field name="xquotationtrans_client_delegation_signature" widget="signature"/>
+                            </group>
+                        </page>                                                                          
+                    </notebook>
+                    </sheet>  
+                </sheet>    
+            </form>
+        </field>
+    </record>
+
+    <record id="view_quotation_final_tree_otp" model="ir.ui.view">
+        <field name="name">Order Final tree</field>
+        <field name="model">quotation.transaction.telkomsel</field>
+        <field name="arch" type="xml">
+            <tree string="Order Final" create="false" edit="false" delete="false">
+                <field name="xquotationtrans_quotation_order"/> 
+                <field name="xquotationtrans_number_quotation"/>  
+                <field name="xquotationtrans_number_contract_id"/>  
+                <field name="xquotationtrans_sales_contract_id"/>  
+                <field name="xquotationtrans_company_contract_id"/>  
+                <field name="xquotationtrans_client_delegation_contract_id"/>  
+                <field name="xquotationtrans_total_harga"/> 
+                <field name="xquotationtrans_discount"/> 
+                <field name="xquotationtrans_total_bayar_fix"/> 
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_quotation_final_filter_otp" model="ir.ui.view">
+        <field name="name">Order Final</field>
+        <field name="model">quotation.transaction.telkomsel</field>
+        <field name="arch" type="xml">
+            <search string="Order Final">
+                 <filter string="Final Order" name="final_quotation" domain="[('state','=','final')]"/>   
+            </search>
+        </field>
+    </record>
+
+    <record id="open_module_tree_quotation_final_otp" model="ir.actions.act_window">
+        <field name="name">Order Final</field>
+        <field name="res_model">quotation.transaction.telkomsel</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+            <field name="context">{
+                "search_default_final_quotation": 4,
+                "default_final_quotation": 4}
+            </field>
+<!--             <field name="domain">[]</field> -->
+            <field name="domain">[]</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_quotation_final_tree_otp')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_quotation_final_form_otp')})]"/>
+            <field name="search_view_id" ref="view_quotation_final_filter_otp"/>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create Order Final.
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="open_module_tree_quotation_final_otp"
+            id="menu_open_module_tree_quotation_final_otp"
+            parent="menu_verif_otp"
+            sequence="2" groups="contract_e.group_admin,contract_e.group_sales,contract_e.group_vp,contract_e.group_gm"/> 
+
+    <!-- usage -->
+    <record id="view_usage_final_form_otp" model="ir.ui.view">
+        <field name="name">Usage Final form</field>
+        <field name="model">quotation.transaction.telkomsel</field>
+        <field name="arch" type="xml">
+            <form string="Usage Final" create="false" edit="false" delete="false">
+                <sheet>
+                    <header>
+                        <field name="state_usage" widget="statusbar"/>
+                    </header>                    
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="xquotationtrans_number_quotation"/>
+                            </h1>
+                        </div> 
+                        <group>
+                            <field name="xquotationtrans_quotation_usage"/>
+                            <field name="xquotationtrans_sales_contract_id" invisible="1"/>
+                            <field name="xquotationtrans_sales_name" invisible="1"/>
+                            <field name="xquotationtrans_sales_phone" invisible="1"/>
+                            <field name="xquotationtrans_sales_email" invisible="1"/>
+                            <field name="xquotationtrans_sales_department" invisible="1"/>
+                            <field name="xquotationtrans_name_vp" invisible="1"/>
+                            <field name="xquotationtrans_name_gm" invisible="1"/>
+                            <field name="xquotationtrans_email_vp" invisible="1"/>
+                            <field name="xquotationtrans_email_gm" invisible="1"/>
+                            <field name="xquotationtrans_vp_department" invisible="1"/>
+                            <field name="xquotationtrans_gm_department" invisible="1"/>
+                            <field name="xquotationtrans_sales_position" invisible="1"/>
+                            <field name="xquotationtrans_vp_position" invisible="1"/>
+                            <field name="xquotationtrans_gm_position" invisible="1"/>
+                            <field name="xquotationtrans_number_contract_id" on_change="onchange_xquotationtrans_number_contract_id(xquotationtrans_number_contract_id)"
+                                        domain="[('xtransaction_sales_id', '=', xquotationtrans_sales_contract_id)]"
+                                        context="{'show_service': 1}"
+                                        options='{"always_reload": True, "highlight_first_line": True, "no_create": True, "no_open": True}'/>
+                        </group>
+                    <group>
+                        <group string="Client">
+                            <field name="xquotationtrans_company_npwp"/>
+                            <field name="xquotationtrans_company_contract_id"/>
+                            <field name="xquotationtrans_company_alamat" invisible="1"/>
+                            <field name="xquotationtrans_client_delegation_contract_id"/>
+                            <field name="xquotationtrans_client_delegation_jabatan" invisible="1"/>
+                            <field name="xquotationtrans_client_delegation_email" invisible="1"/>
+                            <field name="xquotationtrans_client_delegation_phone" invisible="1"/>
+                            <field name="xquotationtrans_company_product"/>
+                            <field name="xquotationtrans_company_brand_category"/>
+                            <field name="xquotationtrans_company_name"/>
+                            <field name="xquotationtrans_date"/>
+                            <field name="xquotationtrans_merchdelegation_name"/>
+                            <field name="xquotationtrans_merchdelegation_email"/>
+                            <field name="xquotationtrans_merchdelegation_phone"/>
+                            <field name="xquotationtrans_invoices_address"/>
+                        </group>
+                        <group string="Telkomsel">
+                            <field name="xquotationtrans_pic_telkomsel"/>
+                            <field name="xquotationtrans_pic_telkomsel_phone"/>
+                        </group>
+                    </group>
+                    <group>
+                        <!-- USAGE -->
+                        <field name="xquotationtrans_list_rate_card_ids_usage">
+                            <tree string="List Perangkat" class="my_custom_class" editable="bottom">
+                                <field name="xquotationtrans_main_ratecard_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="xquotationtrans_inventory_ratecard_id" domain="[('xinventoryrate_ratecard_id', '=', xquotationtrans_main_ratecard_id)]" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="xquotationtrans_detailinventory_ratecard_id" domain="[('xdetailratecard_inventory_id', '=', xquotationtrans_inventory_ratecard_id)]" on_change="onchange_xquotationtrans_detailinventory_ratecard_id(xquotationtrans_detailinventory_ratecard_id)" context="{'show_service': 1}" options='{"always_reload": True, "highlight_first_line": True, "no_create": True, "no_open": True}'/>
+                                <field name="xquotationtrans_detailinventory_remark"/>
+                                <field name="xquotationtrans_date_begin"/>                               
+                                <field name="xquotationtrans_end_date"/>                               
+                                <field name="xquotationtrans_qty"/>                               
+                                <field name="xquotationtrans_detailinventory_rate"/>
+                            </tree>
+                        </field>
+                        <field name="xquotationtrans_discount_usage"/>                           
+                    </group>
+                    <notebook>
+                        <page name="alamatelkomsel" string="Info Telkomsel" invisible="1">
+                            <group>
+                                <field name="xquotationtrans_alamat_name" invisible="1"/>
+                                <field name="xquotationtrans_alamat" invisible="1"/>
+                                <field name="xquotationtrans_lantai" invisible="1"/>
+                                <field name="xquotationtrans_no_telp" invisible="1"/>
+                                <field name="xquotationtrans_facsimile" invisible="1"/>
+                                <field name="xquotationtrans_attention" invisible="1"/>
+                            </group>
+                        </page>  
+                        <page name="banktsel" string="Bank Info" invisible="1">
+                            <group>
+                                <field name="xquotationtrans_account_bank_name" invisible="1"/>
+                                <field name="xquotationtrans_bank_name" invisible="1"/> 
+                                <field name="xquotationtrans_alamat_bank" invisible="1"/>
+                                <field name="xquotationtrans_norek" invisible="1"/>
+                            </group>
+                        </page>  
+                        <page name="sign" string="Signature">
+                             <group>
+                                <field name="xquotationtrans_sign_vp" widget="image" class="oe_avatar" options='{"preview_image": "image_medium"}' invisible="1"/>
+                                <field name="xquotationtrans_sign_gm" widget="image" class="oe_avatar" options='{"preview_image": "image_medium"}' invisible="1"/>
+                                <field name="xquotationtrans_sign_sales" widget="image" class="oe_avatar" options='{"preview_image": "image_medium"}' invisible="1"/>
+                                <field name="xquotationtrans_client_delegation_signature" widget="signature"/>
+                            </group>
+                        </page>                                                                        
+                    </notebook>
+                    </sheet>  
+                </sheet>    
+            </form>
+        </field>
+    </record>
+
+    <record id="view_usage_final_tree_otp" model="ir.ui.view">
+        <field name="name">Usage Final tree</field>
+        <field name="model">quotation.transaction.telkomsel</field>
+        <field name="arch" type="xml">
+            <tree string="Usage Final" create="false" edit="false" delete="false">
+                <field name="xquotationtrans_quotation_usage"/> 
+                <field name="xquotationtrans_number_quotation"/>  
+                <field name="xquotationtrans_number_contract_id"/>  
+                <field name="xquotationtrans_sales_contract_id"/>  
+                <field name="xquotationtrans_company_contract_id"/>  
+                <field name="xquotationtrans_client_delegation_contract_id"/>  
+                <field name="xquotationtrans_discount_usage"/> 
+                <field name="state_usage"/> 
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_usage_final_filter_otp" model="ir.ui.view">
+        <field name="name">Usage Final</field>
+        <field name="model">quotation.transaction.telkomsel</field>
+        <field name="arch" type="xml">
+            <search string="Usage Final">
+                 <filter string="Final Usage" name="final_usage" domain="[('state_usage','=','final')]"/>   
+            </search>
+        </field>
+    </record>
+
+    <record id="open_module_tree_usage_final_otp" model="ir.actions.act_window">
+        <field name="name">Usage Final</field>
+        <field name="res_model">quotation.transaction.telkomsel</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+            <field name="context">{
+                "search_default_final_usage": 4,
+                "default_final_usage": 4}
+            </field>
+<!--             <field name="domain">[]</field> -->
+            <field name="domain">[]</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_usage_final_tree_otp')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_usage_final_form_otp')})]"/>
+            <field name="search_view_id" ref="view_usage_final_filter_otp"/>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create Usage Final.
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="open_module_tree_usage_final_otp"
+            id="menu_open_module_tree_usage_final_otp"
+            parent="menu_verif_otp"
+            sequence="3" groups="contract_e.group_admin,contract_e.group_sales,contract_e.group_vp,contract_e.group_gm"/>   
 </data>
 </odoo>

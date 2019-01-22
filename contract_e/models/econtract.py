@@ -1033,6 +1033,8 @@ class quotation_transaction_telkomsel(models.Model):
         help="It indicates that the invoice has been sent.")
     
     xquotationtrans_usage_quotation = fields.Selection([('usage', 'Usage'), ('order', 'Order')], string="Penagihan")
+    xquotationtrans_quotation_usage = fields.Char(string='Penagihan',default='Usage')
+    xquotationtrans_quotation_order = fields.Char(string='Penagihan',default='Order')
     xquotationtrans_number_contract_id = fields.Many2one('transaction.econtract.telkomsel',string='Contract Number', track_visibility='onchange', select=True)
     xquotationtrans_number_quotation = fields.Char(string='quotation number', size=50, required=True)
     # xquotationtrans_number_usage = fields.Char(string='SOA')
@@ -1243,7 +1245,7 @@ class quotation_transaction_telkomsel(models.Model):
     @api.multi
     def order_quotation(self):
         self.ensure_one()
-        self.xquotationtrans_usage_quotation ='order'
+        self.xquotationtrans_quotation_order ='order'
 
     # State USAGE
     @api.multi
@@ -1251,7 +1253,7 @@ class quotation_transaction_telkomsel(models.Model):
     def pending_usage(self):
         if self.xquotationtrans_number_contract_id == False :
             raise ValidationError('The number contract must be inserted before!')
-        if self.xquotationtrans_usage_quotation == False :
+        if self.xquotationtrans_quotation_usage == False :
            raise ValidationError('Choose Quotation Cannot ne null!')
         if self.xquotationtrans_number_quotation == False :
            raise ValidationError('Quotation Number Cannot be null!')
@@ -1341,7 +1343,7 @@ class quotation_transaction_telkomsel(models.Model):
     def pending_quotation(self):
         if self.xquotationtrans_number_contract_id == False :
             raise ValidationError('The number contract must be inserted before!')
-        if self.xquotationtrans_usage_quotation == False :
+        if self.xquotationtrans_quotation_order == False :
            raise ValidationError('Choose Quotation Cannot ne null!')
         if self.xquotationtrans_number_quotation == False :
            raise ValidationError('Quotation Number Cannot be null!')        
